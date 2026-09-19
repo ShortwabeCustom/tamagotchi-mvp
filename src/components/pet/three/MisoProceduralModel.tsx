@@ -68,14 +68,15 @@ export function MisoProceduralModel({ action, reducedMotion, pointer }: { action
     if (tail.current) tail.current.rotation.y = pose.tail;
     if (scarf.current) scarf.current.rotation.x = pose.lift * 0.12;
   });
-  return <group ref={root} dispose={null}>
+  // Scale the character around its ground contact; the stage and camera stay unchanged.
+  return <group ref={root} dispose={null} scale={1.15}>
     <group scale={[1, 0.87, 1]}>
     <group ref={body} position={[0, 0.76, -0.06]}>
       <mesh geometry={r.body} material={r.bodyCoat} scale={[0.73, 0.72, 0.59]} castShadow receiveShadow />
     </group>
     {[-1, 1].map(side => <group key={side}>
       <mesh geometry={r.haunch} material={r.bodyCoat} position={[side * 0.51, 0.39, -0.14]} scale={[0.32, 0.37, 0.44]} castShadow receiveShadow />
-      <mesh geometry={r.leg} material={r.legCoat} position={[side * 0.31, 0.55, 0.38]} scale={[0.25, 0.55, 0.27]} castShadow receiveShadow rotation={[0.07, 0, side * -0.08]} />
+      <mesh geometry={r.leg} material={r.legCoat} position={[side * 0.31, 0.49, 0.38]} scale={[0.25, 0.49, 0.27]} castShadow receiveShadow rotation={[0.04, 0, side * -0.04]} />
       {[-0.063, 0.065].map(offset => <mesh key={offset} geometry={r.toe} material={r.dark} position={[side * 0.34 + offset, 0.2, 0.697]} />)}
     </group>)}
     <group ref={tail} position={[0.40, 0.27, -0.31]} rotation={[0, -0.15, 0]}><mesh geometry={r.tail} material={r.tailCoat} castShadow receiveShadow /></group>

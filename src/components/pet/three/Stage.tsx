@@ -16,7 +16,7 @@ export function Stage() {
   useEffect(() => () => bowl.dispose(), [bowl]);
   return <group>
     <mesh geometry={base} receiveShadow castShadow>
-      <meshStandardMaterial color="#464236" roughness={1} />
+      <meshStandardMaterial color="#302c2a" roughness={1} />
     </mesh>
     <mesh position={[0, -0.31, 0]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
       <planeGeometry args={[200, 200]} /><shadowMaterial transparent opacity={0.25} />

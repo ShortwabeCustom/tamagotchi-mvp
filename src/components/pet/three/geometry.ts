@@ -30,8 +30,18 @@ export function bodyGeometry(kind: "body" | "leg" | "haunch") {
     const y = signedPower(p.getY(i), kind === "leg" ? 0.78 : 0.87);
     let x = signedPower(p.getX(i), 0.86);
     let z = signedPower(p.getZ(i), 0.86);
-    if (kind === "body") { x *= 0.85 - y * 0.23; z = z * (0.91 - y * 0.18) - (1 - y) * 0.09; }
-    if (kind === "leg") { x *= 0.86 - y * 0.16; z = z * (0.92 - y * 0.12) + (1 - y) * 0.11; }
+    if (kind === "body") {
+      x *= 0.85 - y * 0.23;
+      // Bring the upper chest forward into the shoulders, retaining the seated rump.
+      const chest = 0.20 * Math.exp(-(((y - 0.28) / 0.45) ** 2)) * Math.max(0, z);
+      z = z * (0.91 - y * 0.18) - (1 - y) * 0.09 + chest;
+    }
+    if (kind === "leg") {
+      // A broader shoulder tapers into the paw and curves back into the chest.
+      const shoulder = Math.exp(-(((y - 0.44) / 0.40) ** 2));
+      x *= 0.84 - y * 0.12 + 0.16 * shoulder;
+      z = z * (0.92 - y * 0.12) + (1 - y) * 0.11 - 0.48 * Math.max(0, y);
+    }
     p.setXYZ(i, x, y, z);
   }
   geometry.computeVertexNormals();
