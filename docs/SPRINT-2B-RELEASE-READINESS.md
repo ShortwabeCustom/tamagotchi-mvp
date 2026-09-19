@@ -1,5 +1,7 @@
 # Sprint 2B — cierre técnico local
 
+> Actualización 2026-09-19: la ampliación autorizada resolvió las dependencias y validó una distribución local sin las cachés afectadas. Estado vigente y límites en [remediación y distribución local](SPRINT-2B-LOCAL-DISTRIBUTION.md). El resto de este informe conserva la evidencia histórica anterior a esa remediación.
+
 Fecha: 2026-09-19. Workspace `/Users/alexisvaldez/Developer/bety-miso-3d`, macOS (Darwin), sin variables de sesión SSH. Rama `feat/miso-3d-space`. Base `b8c520db5ee3b1ad92ab8fa945d2a9e3023c672c`; se preservan `053e988`, `c244fde` y `b8c520d`. Código validado y guardado en `8a30205` (`fix: coordinate initial registration across browser tabs`). El commit posterior de este documento no cambia código ni dependencias.
 
 **No se autoriza ni se declara lista una publicación en producción.** La corrección local está validada; dependencias, aprobación visual y dispositivos físicos siguen pendientes. No hubo acceso al VPS, migración, push, merge, modificación de main, diseño, renderer, conversación ni persistencia de producción.
