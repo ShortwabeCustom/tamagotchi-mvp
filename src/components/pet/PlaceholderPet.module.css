@@ -1,0 +1,344 @@
+.pet {
+  --fur-dark: #2c2725;
+  --fur-deep: #1e1b1a;
+  --fur-orange: #ba713c;
+  --fur-light: #d69254;
+  --muzzle: #d9b28d;
+  --eye: #a9ad70;
+  position: relative;
+  width: clamp(12rem, 36vw, 19rem);
+  aspect-ratio: 0.83;
+  filter: drop-shadow(0 2rem 2rem rgba(0, 0, 0, 0.42));
+  transform-origin: 50% 85%;
+  animation: pet-breathe 5.8s ease-in-out infinite;
+}
+
+.head {
+  position: absolute;
+  z-index: 4;
+  top: 7%;
+  left: 50%;
+  width: 78%;
+  aspect-ratio: 1.07;
+  overflow: visible;
+  border: 1px solid rgba(255, 227, 200, 0.08);
+  border-radius: 46% 46% 43% 43% / 48% 48% 43% 43%;
+  background: var(--fur-dark);
+  box-shadow: inset 0.6rem 0.4rem 1.8rem rgba(255, 171, 100, 0.08), inset -0.7rem -0.7rem 1.5rem rgba(0, 0, 0, 0.24), 0 0.8rem 1.6rem rgba(0, 0, 0, 0.24);
+  transform: translateX(-50%);
+  transform-origin: 50% 76%;
+  transition: transform 550ms cubic-bezier(0.2, 0.75, 0.2, 1);
+}
+
+.ear {
+  position: absolute;
+  z-index: -1;
+  top: -28%;
+  width: 43%;
+  height: 55%;
+  overflow: hidden;
+  border: 1px solid rgba(255, 218, 184, 0.12);
+  background: var(--fur-dark);
+  clip-path: polygon(50% 0, 100% 100%, 0 88%);
+  filter: drop-shadow(0 0.3rem 0.3rem rgba(0, 0, 0, 0.24));
+  transform-origin: 50% 92%;
+  transition: transform 420ms ease;
+}
+
+.ear i {
+  position: absolute;
+  inset: 18% 21% 16%;
+  background: #a8644f;
+  clip-path: polygon(50% 0, 100% 100%, 0 88%);
+  opacity: 0.82;
+}
+
+.earLeft { left: -3%; transform: rotate(-9deg); }
+.earRight { right: -3%; transform: scaleX(-1) rotate(-9deg); }
+
+.facePatch {
+  position: absolute;
+  opacity: 0.96;
+}
+
+.facePatchLeft {
+  top: -2%;
+  left: 20%;
+  width: 28%;
+  height: 60%;
+  border-radius: 38% 62% 46% 54%;
+  background: var(--fur-orange);
+  transform: rotate(8deg);
+}
+
+.facePatchRight {
+  right: -2%;
+  bottom: 4%;
+  width: 42%;
+  height: 48%;
+  border-radius: 58% 42% 44% 56%;
+  background: var(--fur-light);
+  transform: rotate(-12deg);
+}
+
+.creamMuzzle {
+  position: absolute;
+  left: 50%;
+  bottom: 8%;
+  width: 54%;
+  height: 36%;
+  border-radius: 46% 46% 48% 48%;
+  background: var(--muzzle);
+  opacity: 0.92;
+  transform: translateX(-50%);
+}
+
+.eye {
+  position: absolute;
+  z-index: 2;
+  top: 37%;
+  width: 29%;
+  aspect-ratio: 0.9;
+  overflow: hidden;
+  border: 0.32rem solid #1d1a19;
+  border-radius: 48%;
+  background: var(--eye);
+  box-shadow: inset 0 0 0 0.22rem rgba(242, 234, 183, 0.34), 0 0.2rem 0.5rem rgba(0, 0, 0, 0.25);
+  transform-origin: center;
+  transition: height 120ms ease, transform 400ms ease;
+}
+
+.eyeLeft { left: 16%; }
+.eyeRight { right: 16%; }
+
+.eye i {
+  position: absolute;
+  top: 14%;
+  left: 50%;
+  width: 58%;
+  height: 72%;
+  border-radius: 50%;
+  background: #111;
+  transform: translateX(-50%);
+  transition: transform 420ms ease, width 420ms ease;
+}
+
+.eye i::after {
+  content: "";
+  position: absolute;
+  top: 9%;
+  right: 12%;
+  width: 31%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: -0.5rem 0.7rem 0 -0.16rem rgba(255, 255, 255, 0.48);
+}
+
+.nose {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 25%;
+  width: 8%;
+  aspect-ratio: 1.35;
+  border-radius: 48% 48% 55% 55%;
+  background: #302421;
+  box-shadow: inset 0 0.12rem rgba(255, 255, 255, 0.14);
+  transform: translateX(-50%);
+}
+
+.mouth {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 16%;
+  width: 13%;
+  height: 8%;
+  border-bottom: 0.14rem solid #302421;
+  border-radius: 0 0 50% 50%;
+  transform: translateX(-50%);
+}
+
+.whiskers {
+  position: absolute;
+  bottom: 21%;
+  width: 21%;
+  height: 1px;
+  background: rgba(220, 204, 188, 0.58);
+  box-shadow: 0 0.38rem rgba(220, 204, 188, 0.48), 0 -0.38rem rgba(220, 204, 188, 0.48);
+}
+
+.whiskersLeft { left: -10%; transform: rotate(4deg); }
+.whiskersRight { right: -10%; transform: rotate(-4deg); }
+
+.body {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: 3%;
+  width: 55%;
+  height: 49%;
+  overflow: hidden;
+  border-radius: 48% 48% 36% 36% / 42% 42% 25% 25%;
+  background: var(--fur-dark);
+  box-shadow: inset -0.8rem -0.7rem 1.2rem rgba(0, 0, 0, 0.3);
+  transform: translateX(-50%);
+}
+
+.bodyPatch {
+  position: absolute;
+  top: 16%;
+  left: -3%;
+  width: 52%;
+  height: 69%;
+  border-radius: 40% 60% 55% 45%;
+  background: var(--fur-orange);
+  transform: rotate(11deg);
+}
+
+.paw {
+  position: absolute;
+  bottom: -2%;
+  width: 35%;
+  height: 33%;
+  border-radius: 48% 48% 26% 26%;
+  background: var(--fur-deep);
+  box-shadow: inset 0 0.3rem 0.4rem rgba(255, 255, 255, 0.035);
+}
+
+.pawLeft { left: 7%; }
+.pawRight { right: 7%; }
+
+.tail {
+  position: absolute;
+  z-index: 1;
+  right: 5%;
+  bottom: 6%;
+  width: 39%;
+  height: 32%;
+  border-radius: 54% 58% 48% 44%;
+  background: var(--fur-orange);
+  box-shadow: inset -1.5rem 0 var(--fur-dark), 0 0.8rem 1rem rgba(0, 0, 0, 0.25);
+  transform: rotate(17deg);
+}
+
+.tail span {
+  position: absolute;
+  right: -1%;
+  top: 0;
+  width: 48%;
+  height: 60%;
+  border-radius: 50%;
+  background: var(--fur-dark);
+}
+
+.bandana {
+  position: absolute;
+  z-index: 6;
+  top: 53%;
+  left: 50%;
+  width: 47%;
+  height: 20%;
+  border-radius: 12% 12% 50% 50%;
+  background: #e8d9c4;
+  box-shadow: 0 0.35rem 0.6rem rgba(0, 0, 0, 0.2);
+  clip-path: polygon(0 0, 100% 0, 72% 100%, 50% 78%, 28% 100%);
+  transform: translateX(-50%);
+}
+
+.bandanaDotOne,
+.bandanaDotTwo {
+  position: absolute;
+  border-radius: 48%;
+  background: #332e2a;
+}
+
+.bandanaDotOne { top: 20%; left: 27%; width: 15%; aspect-ratio: 0.85; transform: rotate(-18deg); }
+.bandanaDotTwo { top: 18%; right: 25%; width: 18%; aspect-ratio: 1.2; transform: rotate(14deg); }
+.bandanaKnot { position: absolute; right: -12%; top: 8%; width: 25%; height: 48%; border-radius: 50%; background: #e8d9c4; transform: rotate(24deg); }
+
+.heart {
+  position: absolute;
+  z-index: 8;
+  top: 1%;
+  right: 2%;
+  width: 1.05rem;
+  height: 1.05rem;
+  background: #e4c4aa;
+  opacity: 0;
+  transform: rotate(45deg) scale(0.6);
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 1.05rem;
+  height: 1.05rem;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.heart::before { left: -50%; }
+.heart::after { top: -50%; }
+
+.headTilt .head { transform: translateX(-50%) rotate(7deg); }
+.listening .head { transform: translateX(-50%) rotate(3deg); }
+.listening .earLeft { transform: rotate(-14deg); }
+.listening .earRight { transform: scaleX(-1) rotate(-5deg); }
+.listening .eye i { width: 63%; transform: translateX(-50%) scale(1.035); }
+.smallBounce { animation: pet-happy 850ms cubic-bezier(0.3, 0.8, 0.3, 1), pet-breathe 5.8s 850ms ease-in-out infinite; }
+.smallBounce .heart { animation: heart-rise 1.5s 250ms ease-out both; }
+.smallBounce .earLeft { transform: rotate(-15deg); }
+.smallBounce .earRight { transform: scaleX(-1) rotate(-15deg); }
+.happy .eye { transform: scaleY(0.88); }
+.isBlinking .eye { transform: scaleY(0.08); }
+.awakening .eye { animation: eyes-awaken 2.35s ease both; }
+.awakening .head { animation: wake-head 2.35s ease both; }
+
+@keyframes pet-breathe {
+  0%, 100% { transform: translateY(0) scaleY(1); }
+  50% { transform: translateY(-2px) scaleY(1.006); }
+}
+
+@keyframes pet-happy {
+  0%, 100% { transform: translateY(0) scale(1); }
+  42% { transform: translateY(-8px) scale(1.018); }
+  68% { transform: translateY(-2px) scale(0.995); }
+}
+
+@keyframes heart-rise {
+  0% { opacity: 0; transform: translateY(0) rotate(45deg) scale(0.55); }
+  28% { opacity: 0.9; }
+  100% { opacity: 0; transform: translateY(-1.6rem) rotate(45deg) scale(1); }
+}
+
+@keyframes eyes-awaken {
+  0%, 34% { transform: scaleY(0.06); }
+  55% { transform: scaleY(1); }
+  68% { transform: scaleY(0.08); }
+  77%, 100% { transform: scaleY(1); }
+}
+
+@keyframes wake-head {
+  0%, 28% { transform: translateX(-50%) translateY(5px) rotate(-2deg); }
+  62% { transform: translateX(-50%) translateY(0) rotate(2deg); }
+  100% { transform: translateX(-50%) translateY(0) rotate(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pet,
+  .smallBounce,
+  .awakening .eye,
+  .awakening .head,
+  .smallBounce .heart {
+    animation-duration: 1ms;
+    animation-iteration-count: 1;
+  }
+
+  .head,
+  .ear,
+  .eye,
+  .eye i { transition-duration: 1ms; }
+}

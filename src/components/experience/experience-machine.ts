@@ -9,7 +9,11 @@ export function createInitialExperienceState(
       phase: "COMPANION",
       displayName: returningDisplayName,
       returning: true,
-      petAction: petActionFor("COMPANION"),
+      petAction: {
+        emotion: "happy",
+        animation: "awakening",
+        intensity: 0.55,
+      },
     };
   }
 
