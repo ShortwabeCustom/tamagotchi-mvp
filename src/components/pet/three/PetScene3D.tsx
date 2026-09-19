@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { PCFShadowMap, Mesh } from "three";
+import { PCFShadowMap, VSMShadowMap, Mesh } from "three";
 import { MisoProceduralModel } from "./MisoProceduralModel";
 import { Stage } from "./Stage";
 import type { SceneProps } from "./contracts";
@@ -9,6 +9,7 @@ import type { SceneProps } from "./contracts";
 function SceneContent(props: SceneProps & { active: boolean; pointer: React.RefObject<{ x: number; y: number }> }) {
   const { gl, scene, camera, invalidate } = useThree();
   const { onStage, onFailure } = props;
+  const baseline = props.presentation === "baseline";
   const actionIdentity = `${props.action.emotion}:${props.action.animation}:${props.action.intensity}`;
   const rendered = useRef(false), frames = useRef(0);
   const propsRef = useRef(props);
@@ -38,10 +39,10 @@ function SceneContent(props: SceneProps & { active: boolean; pointer: React.RefO
   }, [gl, onStage, onFailure]);
   useEffect(() => {
     const side = props.view === "side", front = props.view === "front";
-    camera.position.set(side ? 7.7 : front ? 0 : 4.2, 3.35, side ? 0.4 : front ? 8.4 : 7.2);
-    camera.lookAt(0, 1.25, 0);
+    camera.position.set(side ? 7.7 : front ? 0 : 4.2, baseline ? 3.35 : 2.8, side ? 0.4 : front ? 8.4 : 7.2);
+    camera.lookAt(0, baseline ? 1.25 : 1.47, 0);
     camera.updateProjectionMatrix(); invalidate();
-  }, [camera, invalidate, props.view]);
+  }, [camera, invalidate, props.view, baseline]);
   useEffect(() => { invalidate(); }, [invalidate, actionIdentity, props.reducedMotion, props.active]);
   useEffect(() => {
     if (props.failure === "context") gl.getContext().getExtension("WEBGL_lose_context")?.loseContext();
@@ -78,10 +79,10 @@ function SceneContent(props: SceneProps & { active: boolean; pointer: React.RefO
   if (props.failure === "assets" || props.failure === "renderer") throw new Error(`QA ${props.failure} failure`);
   return <>
     <color attach="background" args={["#0b0b0b"]} />
-    <ambientLight intensity={0.75} />
-    <hemisphereLight args={["#eee7d5", "#4a4037", 1.4]} />
-    <directionalLight position={[-3, 6, 5]} intensity={3.3} color="#ffdab0" castShadow shadow-mapSize={[1024, 1024]} shadow-camera-left={-4} shadow-camera-right={4} shadow-camera-top={5} shadow-camera-bottom={-3} shadow-normalBias={0.025} shadow-bias={-0.0002} />
-    <directionalLight position={[4, 3, -3]} intensity={2.1} color="#dbd6b2" />
+    <ambientLight intensity={baseline ? 0.75 : 0.5} />
+    <hemisphereLight args={["#eee7d5", "#4a4037", baseline ? 1.4 : 1.0]} />
+    <directionalLight position={[-3, 6, 5]} intensity={baseline ? 3.3 : 2.5} color={baseline ? "#ffdab0" : "#ffe2c4"} castShadow shadow-mapSize={[1024, 1024]} shadow-camera-left={-4} shadow-camera-right={4} shadow-camera-top={5} shadow-camera-bottom={-3} shadow-radius={baseline ? 1 : 5} shadow-blurSamples={8} shadow-camera-near={1} shadow-camera-far={15} shadow-normalBias={0.025} shadow-bias={-0.0002} />
+    <directionalLight position={[4, 3, -3]} intensity={baseline ? 2.1 : 2.8} color={baseline ? "#dbd6b2" : "#f1c38c"} />
     <Stage />
     <MisoProceduralModel action={props.action} reducedMotion={props.reducedMotion} pointer={props.pointer} />
   </>;
@@ -108,7 +109,7 @@ export default function PetScene3D(props: SceneProps) {
     const bounds = event.currentTarget.getBoundingClientRect();
     pointer.current = { x: (event.clientX - bounds.left) / bounds.width * 2 - 1, y: (event.clientY - bounds.top) / bounds.height * 2 - 1 };
   }} onPointerLeave={() => { pointer.current = { x: 0, y: 0 }; }}>
-    <Canvas shadows={{ type: PCFShadowMap }} dpr={[1, 1.5]} frameloop={active ? "demand" : "never"} camera={{ position: [4.2, 3.35, 7.2], fov: 39, near: 0.1, far: 100 }} gl={{ antialias: true, alpha: false, powerPreference: "low-power" }} fallback={<p>WebGL no disponible.</p>}>
+    <Canvas shadows={{ type: props.presentation === "baseline" ? PCFShadowMap : VSMShadowMap }} dpr={[1, 1.5]} frameloop={active ? "demand" : "never"} camera={{ position: [4.2, 3.35, 7.2], fov: 39, near: 0.1, far: 100 }} gl={{ antialias: true, alpha: false, powerPreference: "low-power" }} fallback={<p>WebGL no disponible.</p>}>
       <SceneContent {...props} active={active} pointer={pointer} />
     </Canvas>
   </div>;

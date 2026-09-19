@@ -10,6 +10,7 @@ export interface SceneProps {
   action: PetAction;
   reducedMotion: boolean;
   view?: ViewAngle;
+  presentation?: "artistic" | "baseline";
   failure?: FailureMode;
   onStage: (stage: SceneStage) => void;
   onFailure: (reason: string) => void;
