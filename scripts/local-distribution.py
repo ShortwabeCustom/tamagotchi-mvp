@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Local macOS distribution only. Explicit inputs, fail-closed byte inspection.
+"""Local or GitHub Linux distribution. Explicit inputs, fail-closed byte inspection.
 No deployment. Private values are read only by the verifier, never by build children.
 """
 import argparse
@@ -54,8 +54,13 @@ def allowed(name):
 
 def known_values(extra=None):
     # Never return values in reports, errors or child process environment.
-    config = json.loads((Path.home()/'.local/state/bety-sprint2b/local.json').read_text())
-    values = [config['identitySecret'], config['url'], urllib.parse.urlparse(config['url']).password]
+    config_path=Path.home()/'.local/state/bety-sprint2b/local.json'
+    if os.environ.get('BETY_CI_CONFIG'):
+        if os.environ.get('GITHUB_ACTIONS')!='true' or platform.system()!='Linux' or platform.machine()!='x86_64': fail('CI config requires GitHub Linux x64')
+        config_path=Path(os.environ['BETY_CI_CONFIG']).resolve()
+        if not config_path.is_relative_to(Path(os.environ['RUNNER_TEMP']).resolve()): fail('CI config outside temporary directory')
+    config = json.loads(config_path.read_text())
+    values = [config['identitySecret'], config['url'], urllib.parse.urlparse(config['url']).password, config.get('adminPassword')]
     for env_file in ROOT.glob('.env*'):
         if env_file.is_file():
             for line in env_file.read_text().splitlines():
@@ -164,9 +169,12 @@ def build(destination):
                 'sourceDirty':bool(subprocess.check_output(['git','diff','--name-only'],cwd=ROOT)),
                 'lockSha256':sha((destination/'package-lock.json').read_bytes()),'inputs':copied,
                 'node':subprocess.check_output(['node','--version'],env=env).decode().strip(),
+                'npm':subprocess.check_output(['npm','--version'],env=env).decode().strip(),
+                'nodePlatform':subprocess.check_output(['node','-p','process.platform+"/"+process.arch'],env=env).decode().strip(),
+                'libc':platform.libc_ver(), 'runnerImage':{k:os.environ.get(k) for k in ['ImageOS','ImageVersion']},
                 'os':platform.system(),'architecture':platform.machine(),
                 'runtime':'Inject DATABASE_URL and stable BETY_IDENTITY_SECRET into server process; never ship them. node server.js; PORT and HOSTNAME are runtime settings.',
-                'compatibility':'Local macOS only; Linux x86_64 NOT RUN'}
+                'compatibility':'Built for the recorded platform; independent execution must validate the exact archive.'}
     (destination/'build-provenance.json').write_text(json.dumps(metadata,indent=2)+'\n')
     print(json.dumps({'build':str(destination),'status':'PASS','sourceCommit':metadata['commit']}))
 
