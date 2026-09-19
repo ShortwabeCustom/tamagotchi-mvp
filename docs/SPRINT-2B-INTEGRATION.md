@@ -134,3 +134,7 @@ No se ejecutó audit fix, degradación, actualización mayor ni cambio del lockf
 Ver `artifacts/sprint-2b-integration/README.md`. Son capturas nuevas de `/`, con nombres sintéticos y DB local real. No son QA de Sprint 2A ni teléfonos físicos. La imagen con fallback recortado se conserva como evidencia del hallazgo previo a la corrección de caja y está identificada como tal.
 
 Pendientes: autorización/corrección del primer reintento sin cookie; cuatro entradas altas; aprobación visual del recorrido; teléfonos físicos y teclado real, preferencia reduced motion del dispositivo, lector de pantalla y mediciones de background. No se modifica arte para suplir estas validaciones. Producción, VPS, main, secretos remotos y despliegue intactos.
+
+## Seguimiento Sprint 2B.1
+
+El bloqueo histórico de reintento sin cookie fue corregido mediante preparación firmada y verificación de identidad antes del guardado. Ver [SPRINT-2B1-IDENTITY.md](SPRINT-2B1-IDENTITY.md) para la reproducción antes/después, concurrencia real, compatibilidad legacy y límites. Esto no modifica los resultados históricos anteriores ni resuelve las cuatro entradas altas o la aprobación visual pendiente.
