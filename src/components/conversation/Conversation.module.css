@@ -47,7 +47,7 @@
   display: block;
   margin-bottom: 0.55rem;
   color: var(--muted);
-  font-size: 0.7rem;
+  font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -62,44 +62,60 @@
 .inputRow input {
   min-width: 0;
   height: 3.15rem;
-  border: 1px solid rgba(239, 228, 213, 0.18);
-  border-radius: 999px;
-  background: rgba(245, 241, 234, 0.06);
+  border: 0;
+  border-bottom: 1px solid rgba(239, 228, 213, 0.38);
+  border-radius: 0;
+  background: transparent;
   color: var(--text);
-  padding: 0 1.1rem;
+  caret-color: var(--cream);
+  padding: 0 0.2rem;
   font-size: 1rem;
-  transition: border-color 200ms ease, background 200ms ease;
+  transition: border-color 200ms ease;
 }
 
 .inputRow input:hover,
 .inputRow input:focus {
-  border-color: rgba(153, 160, 120, 0.72);
-  background: rgba(245, 241, 234, 0.085);
+  border-color: rgba(239, 228, 213, 0.82);
+  background: transparent;
+}
+
+.inputRow input:focus-visible {
+  border-bottom-color: var(--olive);
+  outline: 0;
+  box-shadow: 0 1px 0 var(--olive);
 }
 
 .inputRow button {
   min-height: 3.15rem;
-  border: 1px solid rgba(239, 228, 213, 0.74);
-  border-radius: 999px;
-  background: var(--cream);
-  color: #292522;
+  border: 0;
+  border-bottom: 1px solid rgba(239, 228, 213, 0.38);
+  border-radius: 0;
+  background: transparent;
+  color: var(--cream);
   cursor: pointer;
-  padding: 0 1.2rem;
-  font-size: 0.72rem;
+  padding: 0 0.2rem;
+  font-size: 0.75rem;
   font-weight: 650;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   transition: transform 180ms ease, background 180ms ease;
 }
 
-.inputRow button:hover { background: #fff8ef; transform: translateY(-1px); }
+.inputRow button:hover { color: #fffaf4; transform: translateY(-1px); }
 .inputRow button:disabled { cursor: wait; opacity: 0.62; }
 
 .error {
   margin-top: 0.6rem !important;
   color: #e6a784 !important;
   font-family: var(--font-sans), sans-serif !important;
-  font-size: 0.78rem !important;
+  font-size: 0.875rem !important;
+}
+
+.status {
+  margin-top: 0.6rem !important;
+  color: var(--muted) !important;
+  font-family: var(--font-sans), sans-serif !important;
+  font-size: 0.875rem !important;
 }
 
 @keyframes bubble-in {
@@ -108,8 +124,22 @@
 }
 
 @media (max-width: 32rem) {
-  .inputRow { grid-template-columns: 1fr; }
-  .inputRow button { width: 100%; }
+  .bubble { padding: 1.25rem; }
+  .inputRow { grid-template-columns: minmax(0, 1fr) auto; }
+}
+
+@media (max-width: 42rem) and (max-height: 38rem) {
+  .bubble {
+    padding: 0.9rem 1.15rem;
+    border-radius: 1.2rem;
+  }
+
+  .bubble p { font-size: 1.15rem; }
+  .bubble .followUp { font-size: 1rem; }
+  .form { margin-top: 0.75rem; }
+  .form label { margin-bottom: 0.25rem; }
+  .inputRow input,
+  .inputRow button { min-height: 2.7rem; height: 2.7rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {

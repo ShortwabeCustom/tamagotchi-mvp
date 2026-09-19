@@ -15,11 +15,11 @@
   z-index: -1;
   top: 14%;
   left: 50%;
-  width: min(88vw, 42rem);
+  width: min(82vw, 36rem);
   aspect-ratio: 1;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(185, 116, 63, 0.17) 0, rgba(185, 116, 63, 0.045) 42%, transparent 70%);
-  filter: blur(12px);
+  background: radial-gradient(circle, rgba(185, 116, 63, 0.15) 0, rgba(185, 116, 63, 0.055) 38%, transparent 68%);
+  filter: blur(10px);
   transform: translateX(-50%);
   animation: glow-in 1.8s ease both;
 }
@@ -66,6 +66,24 @@
   }
 
   .petFrame { min-height: min(50svh, 25rem); }
+}
+
+@media (max-width: 42rem) and (max-height: 38rem) {
+  .companionStage:has(input:focus) {
+    gap: 0.5rem;
+    padding-top: max(0.65rem, env(safe-area-inset-top));
+    padding-bottom: max(0.65rem, env(safe-area-inset-bottom));
+  }
+
+  .companionStage:has(input:focus) .petFrame {
+    min-height: 9.5rem;
+    height: 9.5rem;
+  }
+
+  .companionStage:has(input:focus) .petFrame > * {
+    scale: 0.64;
+    transform-origin: center bottom;
+  }
 }
 
 @media (max-height: 42rem) and (orientation: landscape) {
