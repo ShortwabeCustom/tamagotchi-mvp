@@ -10,7 +10,7 @@
     "lint": "eslint",
     "db:generate": "prisma generate",
     "db:validate": "prisma validate",
-    "test": "vitest run --exclude tests/integration/**",
+    "test": "vitest run --exclude \"tests/integration/**\"",
     "test:integration": "RUN_DB_TESTS=1 vitest run tests/integration"
   },
   "dependencies": {
