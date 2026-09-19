@@ -71,3 +71,8 @@ describe("rememberDisplayName", () => {
     expect(signal?.aborted).toBe(true);
   });
 });
+
+it("includes a stalled JSON body in the request deadline", async () => {
+  vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ ok: true, json: () => new Promise(() => undefined) }));
+  await expect(rememberDisplayName("María José", { timeoutMs: 5 })).rejects.toThrow(RECOVERABLE_NAME_ERROR);
+});

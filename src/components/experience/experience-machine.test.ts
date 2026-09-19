@@ -46,7 +46,7 @@ describe("experienceReducer", () => {
       phase: "COMPANION",
       displayName: "María José",
       returning: true,
-      petAction: { emotion: "happy", animation: "awakening" },
+      petAction: { emotion: "neutral", animation: "idle" },
     });
   });
 
@@ -124,5 +124,21 @@ describe("experienceReducer", () => {
     expect(
       experienceReducer(pending, { type: "NAME_SUBMITTED", displayName: "Otra" }),
     ).toBe(pending);
+  });
+});
+
+describe("integration event races", () => {
+  it("advances only once for duplicate reveal/awake signals and uses the canonical name", () => {
+    let state: ExperienceState = createInitialExperienceState();
+    for (const type of ["OPEN_ENVELOPE", "ENVELOPE_OPENED", "OPEN_SURPRISE", "OPEN_SURPRISE", "PET_VISIBLE", "PET_VISIBLE", "PET_AWAKE", "PET_AWAKE", "NAME_REQUESTED"] as const) state = experienceReducer(state, { type });
+    state = experienceReducer(state, { type: "NAME_SUBMITTED", displayName: " María   José " });
+    expect(state.petAction.emotion).toBe("thinking");
+    state = experienceReducer(state, { type: "NAME_PERSISTED", displayName: "María José" });
+    expect(state).toMatchObject({ phase: "REMEMBERING_NAME", displayName: "María José", petAction: { emotion: "happy" } });
+    state = experienceReducer(state, { type: "NAME_REMEMBERED" });
+    const settled = state;
+    for (const type of ["PET_VISIBLE", "PET_AWAKE", "NAME_REMEMBERED"] as const) state = experienceReducer(state, { type });
+    expect(state).toBe(settled);
+    expect(state.petAction).toMatchObject({ emotion: "neutral", animation: "idle" });
   });
 });
