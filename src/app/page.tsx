@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
 import { Experience } from "@/components/experience/Experience";
-import { isValidVisitorToken, VISITOR_COOKIE_NAME } from "@/lib/identity/visitor";
+import { VISITOR_COOKIE_NAME } from "@/lib/identity/visitor";
+import { resolveVisitor } from "@/lib/identity/resolve-visitor";
 import { recallDisplayName } from "@/lib/memory/profile-service";
 
 import { resolvePetRenderer, resolveRendererTimeout } from "@/lib/pet-engine/renderer-config";
@@ -11,9 +12,10 @@ export default async function Home() {
   let initialDisplayName: string | undefined;
   let initialMemoryStatus: "resolved" | "unavailable" = "resolved";
 
-  if (isValidVisitorToken(visitorToken)) {
+  if (visitorToken) {
     try {
-      initialDisplayName = (await recallDisplayName(visitorToken)) ?? undefined;
+      const verifiedToken = await resolveVisitor(visitorToken);
+      initialDisplayName = verifiedToken ? (await recallDisplayName(verifiedToken)) ?? undefined : undefined;
     } catch (error) {
       initialMemoryStatus = "unavailable";
       initialDisplayName = undefined;

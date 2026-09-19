@@ -7,7 +7,9 @@ import { Letter } from "@/components/letter/Letter";
 import { PetRenderer } from "@/components/pet/PetRenderer";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { trackEvent } from "@/lib/analytics/track-event";
-import { RECOVERABLE_NAME_ERROR, rememberDisplayName } from "@/lib/profile/profile-client";
+import { RECOVERABLE_NAME_ERROR } from "@/lib/profile/profile-client";
+import { createRegistrationSession } from "@/lib/profile/registration-session";
+import { IdentityError } from "@/lib/profile/identity-errors";
 import { createInitialExperienceState, experienceReducer } from "./experience-machine";
 import styles from "./Experience.module.css";
 
@@ -30,6 +32,8 @@ export function Experience({
   const [rendererReady, setRendererReady] = useState(false);
   const [rendererFallback, setRendererFallback] = useState(false);
   const [revealFinished, setRevealFinished] = useState(false);
+  const registration = useRef<ReturnType<typeof createRegistrationSession> | undefined>(undefined);
+  const [submissionStep, setSubmissionStep] = useState<"preparing" | "saving">("preparing");
   const mounted = useRef(false);
   const confirmationTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
   const onRendererReady = useCallback((mode: "2d" | "3d") => {
@@ -39,7 +43,7 @@ export function Experience({
   const onAwake = useCallback(() => dispatch({ type: "PET_AWAKE" }), []);
   useEffect(() => {
     mounted.current = true;
-    return () => { mounted.current = false; clearTimeout(confirmationTimer.current); };
+    return () => { mounted.current = false; registration.current?.cancel(); registration.current = undefined; clearTimeout(confirmationTimer.current); };
   }, []);
   const systemReducedMotion = usePrefersReducedMotion();
   // Development-only fault injection for acceptance tests on the real route.
@@ -99,7 +103,8 @@ export function Experience({
     trackEvent("name_submitted");
 
     try {
-      const response = await rememberDisplayName(displayName);
+      registration.current ??= createRegistrationSession();
+      const response = await registration.current.submit(displayName, step => { if (mounted.current) setSubmissionStep(step); });
       if (!mounted.current) return;
       if (response.firstMemoryCreated) trackEvent("first_memory_created");
       dispatch({ type: "NAME_PERSISTED", displayName: response.displayName });
@@ -113,7 +118,7 @@ export function Experience({
       }
       dispatch({
         type: "NAME_FAILED",
-        message: RECOVERABLE_NAME_ERROR,
+        message: error instanceof IdentityError ? error.message : RECOVERABLE_NAME_ERROR,
       });
     } finally {
       submissionInFlight.current = false;
@@ -156,6 +161,7 @@ export function Experience({
 
   return (
     <main
+      data-submission-step={state.phase === "ASKING_NAME" && state.nameSubmission === "pending" ? submissionStep : undefined}
       data-phase={state.phase}
       data-renderer={rendererFallback ? "2d" : rendererMode}
       className={`${styles.companionStage} ${state.phase === "REVEAL" ? styles.revealing : ""}`}

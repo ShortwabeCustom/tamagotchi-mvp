@@ -6,4 +6,5 @@ export interface ProfileResponse {
 
 export interface ApiErrorResponse {
   error: string;
+  code?: string;
 }

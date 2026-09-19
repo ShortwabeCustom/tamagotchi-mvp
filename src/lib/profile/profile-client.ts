@@ -1,3 +1,4 @@
+import { IdentityError, IDENTITY_LOST_ERROR } from "./identity-errors";
 import type { ApiErrorResponse, ProfileResponse } from "@/types/profile";
 
 export const NAME_REQUEST_TIMEOUT_MS = 8_000;
@@ -26,12 +27,15 @@ export async function rememberDisplayName(
     const request = async () => {
       const response = await fetch("/api/profile/name", {
         method: "POST",
+        credentials: "same-origin",
+        cache: "no-store",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ displayName }),
         signal: controller.signal,
       });
       if (!response.ok) {
         const body = (await response.json().catch(() => null)) as ApiErrorResponse | null;
+        if (body?.code === "IDENTITY_REQUIRED") throw new IdentityError(IDENTITY_LOST_ERROR);
         throw new Error(body?.error ?? "name persistence request failed");
       }
       return (await response.json()) as ProfileResponse;
@@ -40,6 +44,7 @@ export async function rememberDisplayName(
     return await Promise.race([request(), timeout]);
 
   } catch (error) {
+    if (error instanceof IdentityError) throw error;
     throw new Error(RECOVERABLE_NAME_ERROR, { cause: error });
   } finally {
     if (timeoutId) clearTimeout(timeoutId);

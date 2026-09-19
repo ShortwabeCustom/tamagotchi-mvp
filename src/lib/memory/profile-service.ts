@@ -1,3 +1,4 @@
+import { Prisma } from "@/generated/prisma/client";
 import { prisma } from "@/lib/db/prisma";
 import { hashVisitorToken } from "@/lib/identity/visitor";
 import type { PetAction } from "@/types/pet";
@@ -21,7 +22,9 @@ export async function rememberName(
   const visitorHash = hashVisitorToken(visitorToken);
   const now = new Date();
 
-  const result = await prisma.$transaction(async (transaction) => {
+  // Serializable protects the entire three-record transaction, including the
+  // first-memory decision. Retry only documented serialization/write conflicts.
+  const write = () => prisma.$transaction(async (transaction) => {
     const profile = await transaction.userProfile.upsert({
       where: { visitorHash },
       create: { visitorHash, displayName },
@@ -79,9 +82,15 @@ export async function rememberName(
       displayName: profile.displayName ?? displayName,
       firstMemoryCreated: existingMemory === null,
     };
-  });
+  }, { isolationLevel: "Serializable" });
 
-  return { ...result, petAction: HAPPY_NAME_ACTION };
+  for (let attempt = 0; ; attempt++) {
+    try { return { ...await write(), petAction: HAPPY_NAME_ACTION }; }
+    catch (error) {
+      if (!(error instanceof Prisma.PrismaClientKnownRequestError) || error.code !== "P2034" || attempt >= 4) throw error;
+      await new Promise(resolve => setTimeout(resolve, 10 * (attempt + 1)));
+    }
+  }
 }
 
 export async function recallDisplayName(visitorToken: string): Promise<string | null> {
