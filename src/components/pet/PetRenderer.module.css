@@ -1,0 +1,8 @@
+.scene { width: min(100%, 48rem); height: 100%; min-height: 16rem; position: relative; isolation: isolate; }
+.canvas { position: absolute; inset: 0; }
+.fallback { position: absolute; inset: 0; display: grid; place-items: center; background: #0b0b0b; }
+.status { position: absolute; bottom: 0; width: 100%; text-align: center; color: #bdb4a8; font-size: .8rem; }
+@media (max-height: 550px) { .scene { min-height: 11rem; } }
+.fallback > * { scale: .7; }
+.scene[data-reduced-motion="true"] .fallback * { animation: none !important; transition: none !important; }
+@media (max-height: 550px) { .fallback > * { scale: .45; } }

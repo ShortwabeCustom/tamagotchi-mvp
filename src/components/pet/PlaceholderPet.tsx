@@ -7,11 +7,13 @@ import styles from "./PlaceholderPet.module.css";
 
 interface PlaceholderPetProps {
   action: PetAction;
+  reducedMotion?: boolean;
 }
 
-export function PlaceholderPet({ action }: PlaceholderPetProps) {
+export function PlaceholderPet({ action, reducedMotion = false }: PlaceholderPetProps) {
   const [isBlinking, setIsBlinking] = useState(false);
-  const prefersReducedMotion = usePrefersReducedMotion();
+  const systemReducedMotion = usePrefersReducedMotion();
+  const prefersReducedMotion = reducedMotion || systemReducedMotion;
 
   useEffect(() => {
     if (prefersReducedMotion || action.animation === "awakening") return;
@@ -41,6 +43,7 @@ export function PlaceholderPet({ action }: PlaceholderPetProps) {
 
   const className = [
     styles.pet,
+    prefersReducedMotion ? styles.reducedMotion : "",
     styles[action.animation],
     styles[action.emotion],
     isBlinking ? styles.isBlinking : "",

@@ -361,3 +361,5 @@
   .eye,
   .eye i { transition-duration: 1ms; }
 }
+
+.reducedMotion, .reducedMotion * { animation: none !important; transition: none !important; }
