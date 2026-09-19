@@ -22,6 +22,7 @@ const commands = {
   build: ['npm', ['run', 'build']],
   production: ['node_modules/.bin/next', ['start', '-H', '127.0.0.1', '-p', '3001']],
   test: ['npm', ['run', 'test:integration', '--', '--no-file-parallelism']],
+  'migration-status': ['node_modules/.bin/prisma', ['migrate', 'status']],
 };
 if (mode === 'verify') { console.log('Base local exclusiva y pertenencia verificadas.'); }
 else {
