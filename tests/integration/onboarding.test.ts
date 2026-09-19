@@ -125,4 +125,19 @@ describe.runIf(process.env.RUN_DB_TESTS === "1")("onboarding with real local Pos
     expect(await counts(cookie)).toEqual(before);
     expect(await recallDisplayName(token(cookie))).toBe("María José");
   });
+  it("fails closed without signing configuration and does not write or issue a cookie", async () => {
+    const secret = process.env.BETY_IDENTITY_SECRET;
+    const before = await prisma.userProfile.count();
+    try {
+      delete process.env.BETY_IDENTITY_SECRET;
+      const response = await prepare(request("/api/identity/prepare"));
+      expect(response.status).toBe(503);
+      expect(response.headers.get("set-cookie")).toBeNull();
+      expect(response.headers.get("cache-control")).toBe("private, no-store");
+      expect(await prisma.userProfile.count()).toBe(before);
+    } finally {
+      if (secret === undefined) delete process.env.BETY_IDENTITY_SECRET;
+      else process.env.BETY_IDENTITY_SECRET = secret;
+    }
+  });
 });

@@ -1,10 +1,11 @@
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { createRegistrationSession } from "./registration-session";
 import { COOKIE_REQUIRED_ERROR, IDENTITY_LOST_ERROR } from "./identity-errors";
 const missing = () => Response.json({ code: "IDENTITY_REQUIRED" }, { status: 409 });
 const verified = () => Response.json({ verified: true });
 const prepared = () => Response.json({ prepared: true });
 const saved = () => Response.json({ displayName: "María José", firstMemoryCreated: false, petAction: { emotion: "happy", animation: "smallBounce", intensity: 0.6 } });
+beforeEach(() => vi.stubGlobal("navigator", { locks: { request: (_name: string, _options: unknown, callback: (lock: object) => unknown) => callback({}) } }));
 afterEach(() => { vi.unstubAllGlobals(); vi.useRealTimers(); });
 describe("registration session with explicit transport doubles", () => {
   it("requires cookie echo, shares one operation, and ignores preparation success alone", async () => {

@@ -7,11 +7,12 @@ export const RECOVERABLE_NAME_ERROR =
 
 interface RememberDisplayNameOptions {
   timeoutMs?: number;
+  fetcher?: typeof fetch;
 }
 
 export async function rememberDisplayName(
   displayName: string,
-  { timeoutMs = NAME_REQUEST_TIMEOUT_MS }: RememberDisplayNameOptions = {},
+  { timeoutMs = NAME_REQUEST_TIMEOUT_MS, fetcher = fetch }: RememberDisplayNameOptions = {},
 ): Promise<ProfileResponse> {
   const controller = new AbortController();
   let timeoutId: ReturnType<typeof setTimeout> | undefined;
@@ -25,7 +26,7 @@ export async function rememberDisplayName(
 
   try {
     const request = async () => {
-      const response = await fetch("/api/profile/name", {
+      const response = await fetcher("/api/profile/name", {
         method: "POST",
         credentials: "same-origin",
         cache: "no-store",
