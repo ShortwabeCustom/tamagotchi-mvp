@@ -1,0 +1,149 @@
+.bubble {
+  position: relative;
+  width: min(100%, 31rem);
+  padding: clamp(1.25rem, 4vw, 1.75rem);
+  border: 1px solid rgba(239, 228, 213, 0.15);
+  border-radius: 1.5rem;
+  background: rgba(21, 20, 18, 0.92);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.32), inset 0 1px rgba(255, 255, 255, 0.035);
+  animation: bubble-in 500ms ease both;
+  backdrop-filter: blur(12px);
+}
+
+.bubble::before {
+  content: "";
+  position: absolute;
+  top: -0.48rem;
+  left: 50%;
+  width: 0.85rem;
+  height: 0.85rem;
+  border-top: 1px solid rgba(239, 228, 213, 0.15);
+  border-left: 1px solid rgba(239, 228, 213, 0.15);
+  background: #151412;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.bubble p {
+  margin: 0;
+  color: var(--text);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.35rem, 4vw, 1.75rem);
+  line-height: 1.25;
+}
+
+.bubble .followUp {
+  margin-top: 0.65rem;
+  color: rgba(245, 241, 234, 0.77);
+  font-size: clamp(1.15rem, 3.5vw, 1.45rem);
+}
+
+.centered { text-align: center; }
+
+.form {
+  margin-top: 1.4rem;
+}
+
+.form label {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.inputRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.6rem;
+}
+
+.inputRow input {
+  min-width: 0;
+  height: 3.15rem;
+  border: 0;
+  border-bottom: 1px solid rgba(239, 228, 213, 0.38);
+  border-radius: 0;
+  background: transparent;
+  color: var(--text);
+  caret-color: var(--cream);
+  padding: 0 0.2rem;
+  font-size: 1rem;
+  transition: border-color 200ms ease;
+}
+
+.inputRow input:hover,
+.inputRow input:focus {
+  border-color: rgba(239, 228, 213, 0.82);
+  background: transparent;
+}
+
+.inputRow input:focus-visible {
+  border-bottom-color: var(--olive);
+  outline: 0;
+  box-shadow: 0 1px 0 var(--olive);
+}
+
+.inputRow button {
+  min-height: 3.15rem;
+  border: 0;
+  border-bottom: 1px solid rgba(239, 228, 213, 0.38);
+  border-radius: 0;
+  background: transparent;
+  color: var(--cream);
+  cursor: pointer;
+  padding: 0 0.2rem;
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.inputRow button:hover { color: #fffaf4; transform: translateY(-1px); }
+.inputRow button:disabled { cursor: wait; opacity: 0.62; }
+
+.error {
+  margin-top: 0.6rem !important;
+  color: #e6a784 !important;
+  font-family: var(--font-sans), sans-serif !important;
+  font-size: 0.875rem !important;
+}
+
+.status {
+  margin-top: 0.6rem !important;
+  color: var(--muted) !important;
+  font-family: var(--font-sans), sans-serif !important;
+  font-size: 0.875rem !important;
+}
+
+@keyframes bubble-in {
+  from { opacity: 0; transform: translateY(0.6rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 32rem) {
+  .bubble { padding: 1.25rem; }
+  .inputRow { grid-template-columns: minmax(0, 1fr) auto; }
+}
+
+@media (max-width: 42rem) and (max-height: 38rem) {
+  .bubble {
+    padding: 0.9rem 1.15rem;
+    border-radius: 1.2rem;
+  }
+
+  .bubble p { font-size: 1.15rem; }
+  .bubble .followUp { font-size: 1rem; }
+  .form { margin-top: 0.75rem; }
+  .form label { margin-bottom: 0.25rem; }
+  .inputRow input,
+  .inputRow button { min-height: 2.7rem; height: 2.7rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bubble { animation-duration: 1ms; }
+  .inputRow input,
+  .inputRow button { transition-duration: 1ms; }
+}
