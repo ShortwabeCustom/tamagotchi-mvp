@@ -1,26 +1,24 @@
-# Sprint 2A — primera previsualización local implementada
+# Sprint 2A — fidelidad artística implementada para revisión local
 
 Actualizado: 2026-09-19. Rama `feat/miso-3d-space`, clon local del Mac.
 
-**3D funcional local: listo para revisar. Fidelidad artística: pendiente importante de aprobación.**
+**Modelo procedural modificado, funcional y con evidencia nueva. Fidelidad artística pendiente de aprobación del usuario.**
 
-- Miso procedural de cuerpo completo con geometría real, escenario, cuenco con cavidad, sobre, cámara y luces.
-- PetRenderer/PetAction conservados, carga diferida, 2D por defecto en el producto, selector runtime en preview.
-- Microinteracciones, control de carga/primer frame, fallback por errores y pérdida de contexto, reduced motion y pausa fuera de vista.
-- Preview aislada sin Prisma/identidad/API: http://127.0.0.1:3000/preview/miso. Ruta 404 en producción.
-- 24 pruebas unitarias pasan; TypeScript, lint y build pasan. Integración DB pendiente; no se usó producción.
-- Medición Apple M4: 24.889 triángulos / 34 draw calls principal; 37.969 / 48 con sombras. DPR 1–1.5.
-- Capturas reales desktop/mobile/tablet y estados en `artifacts/sprint-2a/`.
-- No se recibieron imágenes de referencia en esta sesión. La descripción del handoff guió una aproximación procedural; no equivale a fidelidad aprobada.
-- Auditoría: cuatro entradas high siguen abiertas; sin reparación forzada ni cambios mayores de Prisma.
-- Sin acceso al VPS, secretos copiados, migraciones, cambios en main o despliegue.
+- Cinco ajustes aplicados: silueta/postura, rostro/expresiones, orejas/cola/patas/pañuelo, máscaras carey, materiales/luces/cámara.
+- Referencia real de cuerpo completo inspeccionada en la raíz del clon; preservada y excluida de commits.
+- PetRenderer/PetAction, fallback 2D, reduced motion, pausa fuera de vista, fixtures locales y 2D por defecto en producto preservados.
+- 35 pruebas unitarias pasan; TypeScript, lint y build pasan. Preview devuelve 404 en build local de producción. Integración DB pendiente.
+- Pase principal neutral: 37.873 triángulos / 44 draw calls, frente al QA anterior de 24.889 / 34. No medición de FPS ni teléfonos físicos.
+- Evidencia nueva y copias identificadas del QA anterior: `artifacts/sprint-2a-fidelity/`. Incluye video local awakening → idle → curious → happy.
+- Informe actual: [docs/SPRINT-2A-FIDELITY-REVIEW.md](docs/SPRINT-2A-FIDELITY-REVIEW.md). QA anterior preservado: [docs/SPRINT-2A-LOCAL-REVIEW.md](docs/SPRINT-2A-LOCAL-REVIEW.md).
+- Siguen abiertas cuatro entradas high: prisma, @prisma/config, deepmerge-ts y mysql2. Sin reparación ni cambios de dependencias en esta iteración.
+- Sin acceso al VPS/DB, secretos copiados, cambios de main, push, merge o despliegue. Commits históricos `75a27fb` y `85f4fd8` preservados.
 
-Arranque desde este clon, sin variables de base de datos:
+Preview aislada: http://127.0.0.1:3000/preview/miso
 
 ```sh
+cd /Users/alexisvaldez/Developer/bety-miso-3d
 npm run dev -- --hostname 127.0.0.1 --port 3000
 ```
 
-Ctrl+C detiene el servidor. Informe, evidencias, limitaciones y validación: [docs/SPRINT-2A-LOCAL-REVIEW.md](docs/SPRINT-2A-LOCAL-REVIEW.md).
-
-El documento [docs/SPRINT-2A-HANDOFF.md](docs/SPRINT-2A-HANDOFF.md) conserva el estado histórico previo: preparación en VPS y suspensión por recursos. No describe el estado actual de esta implementación local.
+No necesita `.env` ni DATABASE_URL. Ctrl+C detiene el servidor. El handoff conserva la historia anterior; no describe el estado actual del modelo.

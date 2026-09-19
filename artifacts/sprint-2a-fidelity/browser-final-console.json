@@ -1,0 +1,20 @@
+[
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T08:42:32.757Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T08:44:32.742Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T08:44:50.372Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  }
+]

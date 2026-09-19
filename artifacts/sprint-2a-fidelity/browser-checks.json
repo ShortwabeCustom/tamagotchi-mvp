@@ -1,0 +1,113 @@
+{
+  "date": "2026-09-19T08:36:10.299Z",
+  "device": "Apple M4; viewport emulation, no physical mobile device",
+  "checks": [
+    {
+      "name": "reduced motion",
+      "first": {
+        "at": 1789807082236,
+        "metrics": "37,873 triángulos · 44 draw calls (principal) · 60,593 / 63 con sombras · DPR 1.5 · 24 geometrías · 4 texturas · 20588 frames\nANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
+      },
+      "second": {
+        "at": 1789807116413,
+        "metrics": "37,873 triángulos · 44 draw calls (principal) · 60,593 / 63 con sombras · DPR 1.5 · 24 geometrías · 4 texturas · 20588 frames\nANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
+      },
+      "stage": "frame"
+    },
+    {
+      "name": "2D selector with happy",
+      "state": {
+        "canvases": 0,
+        "name": "Bety local",
+        "selected": "Alegría"
+      }
+    },
+    {
+      "name": "import failure",
+      "state": {
+        "canvases": 0,
+        "name": "Bety local",
+        "reason": "renderer-or-import",
+        "selected": "Alegría",
+        "stage": "fallback"
+      }
+    },
+    {
+      "name": "assets failure",
+      "state": {
+        "canvases": 0,
+        "name": "Bety local",
+        "selected": "Alegría",
+        "stage": "fallback"
+      }
+    },
+    {
+      "name": "renderer failure",
+      "state": {
+        "canvases": 0,
+        "name": "Bety local",
+        "selected": "Alegría",
+        "stage": "fallback"
+      }
+    },
+    {
+      "name": "real WEBGL context loss",
+      "state": {
+        "canvases": 0,
+        "name": "Bety local",
+        "reason": "context-lost",
+        "selected": "Alegría",
+        "stage": "fallback"
+      }
+    },
+    {
+      "name": "first-frame timeout",
+      "elapsedMs": 83222,
+      "state": {
+        "canvases": 0,
+        "name": "Bety local",
+        "reason": "load-timeout",
+        "selected": "Alegría",
+        "stage": "fallback"
+      }
+    },
+    {
+      "name": "mobile 390x844",
+      "state": {
+        "height": 844,
+        "scrollWidth": 390,
+        "stage": "frame",
+        "width": 390
+      }
+    },
+    {
+      "name": "offscreen pause at 390x500",
+      "first": {
+        "at": 1789807341701,
+        "metrics": "37,873 triángulos · 44 draw calls (principal) · 60,593 / 63 con sombras · DPR 1 · 24 geometrías · 4 texturas · 529 frames\nANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+        "active": "false"
+      },
+      "second": {
+        "at": 1789807352226,
+        "metrics": "37,873 triángulos · 44 draw calls (principal) · 60,593 / 63 con sombras · DPR 1 · 24 geometrías · 4 texturas · 529 frames\nANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+        "active": "false"
+      }
+    },
+    {
+      "name": "explicit remount 1",
+      "metrics": "37,873 triángulos · 44 draw calls (principal) · 60,593 / 63 con sombras · DPR 1 · 23 geometrías · 4 texturas · 3 frames\nANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+      "stage": "frame"
+    },
+    {
+      "name": "explicit remount 2",
+      "metrics": "37,873 triángulos · 44 draw calls (principal) · 60,593 / 63 con sombras · DPR 1 · 23 geometrías · 4 texturas · 3 frames\nANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+      "stage": "frame"
+    }
+  ],
+  "metrics": {
+    "artistic": "37,873 triángulos · 44 draw calls (principal) · 60,593 / 63 con sombras · DPR 1.5 · 24 geometrías · 4 texturas · 14756 frames\nANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+    "baseline": "37,873 triángulos · 44 draw calls (principal) · 60,589 / 60 con sombras · DPR 1.5 · 24 geometrías · 4 texturas · 18293 frames\nANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+    "freshArtistic": "37,873 triángulos · 44 draw calls (principal) · 60,593 / 63 con sombras · DPR 1 · 24 geometrías · 4 texturas · 1486 frames\nANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+    "finalBaseline": "37,873 triángulos · 44 draw calls (principal) · 60,589 / 60 con sombras · DPR 1 · 24 geometrías · 4 texturas · 1497 frames\nANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
+  }
+}

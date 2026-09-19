@@ -1,0 +1,152 @@
+[
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T08:25:45.446Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "error",
+    "message": "./src/components/pet/three/geometry.ts:13:63\nError: '**' cannot be applied to unary/await expression.\n  11 | ...dPower(p.getY(i), 0.66);\n  12 | ...ower(p.getZ(i), 0.64);\n> 13 | ... + 0.055 * Math.exp(-((y + 0.35) / 0.4) ** 2);\n     |                                               ^\n  14 | ...\n  15 | ... = [-0.46, 0.46].reduce((sum, eyeX) => sum + Math.exp(-(((x - eyeX) / 0.28) ** 2 + ((y ...\n  16 | ...= Math.exp(-((x / 0.56) ** 2 + ((y + 0.49) / 0.3) ** 2) * 1.5);\n\nParsing ecmascript source code failed\n\nImport trace:\n  Client Component Browser:\n    ./src/components/pet/three/geometry.ts [Client Component Browser]\n    ./src/components/pet/three/MisoProceduralModel.tsx [Client Component Browser]\n    ./src/components/pet/three/PetScene3D.tsx [Client Component Browser]\n    ./src/components/pet/PetRenderer.tsx [Client Component Browser]\n    ./src/components/preview/MisoPreview.tsx [Client Component Browser]\n    ./src/components/preview/MisoPreview.tsx [Server Component]\n    ./src/app/preview/miso/page.tsx [Server Component]",
+    "timestamp": "2026-09-19T08:25:45.446Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "error",
+    "message": "./src/components/pet/three/MisoProceduralModel.tsx:6:1\nError: Export earGeometry doesn't exist in target module\n  4 | import { CatmullRomCurve3, Group, Mesh, MeshStandardMaterial, SphereGeometry, TubeGeometry,...\n  5 | import type { PetAction } from \"@/types/pet\";\n> 6 | import { earGeometry, scarfGeometry, toyGeometry } from \"./geometry\";\n    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  7 | import { ActionClock, motionPose } from \"./motion\";\n  8 |\n  9 | export function MisoProceduralModel({ action, reducedMotion, pointer }: { action: PetAction...\n\nThe export earGeometry was not found in module [project]/src/components/pet/three/geometry.ts [app-client] (ecmascript).\nThe module has no exports at all.\nAll exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.\n\nImport trace:\n  Client Component Browser:\n    ./src/components/pet/three/MisoProceduralModel.tsx [Client Component Browser]\n    ./src/components/pet/three/PetScene3D.tsx [Client Component Browser]\n    ./src/components/pet/PetRenderer.tsx [Client Component Browser]\n    ./src/components/preview/MisoPreview.tsx [Client Component Browser]\n    ./src/components/preview/MisoPreview.tsx [Server Component]\n    ./src/app/preview/miso/page.tsx [Server Component]",
+    "timestamp": "2026-09-19T08:25:45.447Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "error",
+    "message": "./src/components/pet/three/MisoProceduralModel.tsx:6:1\nError: Export scarfGeometry doesn't exist in target module\n  4 | import { CatmullRomCurve3, Group, Mesh, MeshStandardMaterial, SphereGeometry, TubeGeometry,...\n  5 | import type { PetAction } from \"@/types/pet\";\n> 6 | import { earGeometry, scarfGeometry, toyGeometry } from \"./geometry\";\n    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  7 | import { ActionClock, motionPose } from \"./motion\";\n  8 |\n  9 | export function MisoProceduralModel({ action, reducedMotion, pointer }: { action: PetAction...\n\nThe export scarfGeometry was not found in module [project]/src/components/pet/three/geometry.ts [app-client] (ecmascript).\nThe module has no exports at all.\nAll exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.\n\nImport trace:\n  Client Component Browser:\n    ./src/components/pet/three/MisoProceduralModel.tsx [Client Component Browser]\n    ./src/components/pet/three/PetScene3D.tsx [Client Component Browser]\n    ./src/components/pet/PetRenderer.tsx [Client Component Browser]\n    ./src/components/preview/MisoPreview.tsx [Client Component Browser]\n    ./src/components/preview/MisoPreview.tsx [Server Component]\n    ./src/app/preview/miso/page.tsx [Server Component]",
+    "timestamp": "2026-09-19T08:25:45.447Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "error",
+    "message": "./src/components/pet/three/MisoProceduralModel.tsx:6:1\nError: Export toyGeometry doesn't exist in target module\n  4 | import { CatmullRomCurve3, Group, Mesh, MeshStandardMaterial, SphereGeometry, TubeGeometry,...\n  5 | import type { PetAction } from \"@/types/pet\";\n> 6 | import { earGeometry, scarfGeometry, toyGeometry } from \"./geometry\";\n    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  7 | import { ActionClock, motionPose } from \"./motion\";\n  8 |\n  9 | export function MisoProceduralModel({ action, reducedMotion, pointer }: { action: PetAction...\n\nThe export toyGeometry was not found in module [project]/src/components/pet/three/geometry.ts [app-client] (ecmascript).\nThe module has no exports at all.\nAll exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.\n\nImport trace:\n  Client Component Browser:\n    ./src/components/pet/three/MisoProceduralModel.tsx [Client Component Browser]\n    ./src/components/pet/three/PetScene3D.tsx [Client Component Browser]\n    ./src/components/pet/PetRenderer.tsx [Client Component Browser]\n    ./src/components/preview/MisoPreview.tsx [Client Component Browser]\n    ./src/components/preview/MisoPreview.tsx [Server Component]\n    ./src/app/preview/miso/page.tsx [Server Component]",
+    "timestamp": "2026-09-19T08:25:45.447Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "error",
+    "message": "./src/components/pet/three/geometry.ts:13:63\nError: '**' cannot be applied to unary/await expression.\n  11 | ...dPower(p.getY(i), 0.66);\n  12 | ...ower(p.getZ(i), 0.64);\n> 13 | ... + 0.055 * Math.exp(-((y + 0.35) / 0.4) ** 2);\n     |                                               ^\n  14 | ...\n  15 | ... = [-0.46, 0.46].reduce((sum, eyeX) => sum + Math.exp(-(((x - eyeX) / 0.28) ** 2 + ((y ...\n  16 | ...= Math.exp(-((x / 0.56) ** 2 + ((y + 0.49) / 0.3) ** 2) * 1.5);\n\nParsing ecmascript source code failed\n\nImport trace:\n  Client Component Browser:\n    ./src/components/pet/three/geometry.ts [Client Component Browser]\n    ./src/components/pet/three/MisoProceduralModel.tsx [Client Component Browser]\n    ./src/components/pet/three/PetScene3D.tsx [Client Component Browser]\n    ./src/components/pet/PetRenderer.tsx [Client Component Browser]\n    ./src/components/preview/MisoPreview.tsx [Client Component Browser]\n    ./src/components/preview/MisoPreview.tsx [Server Component]\n    ./src/app/preview/miso/page.tsx [Server Component]",
+    "timestamp": "2026-09-19T08:25:45.447Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "error",
+    "message": "./src/components/pet/three/MisoProceduralModel.tsx:6:1\nError: Export earGeometry doesn't exist in target module\n  4 | import { CatmullRomCurve3, Group, Mesh, MeshStandardMaterial, SphereGeometry, TubeGeometry,...\n  5 | import type { PetAction } from \"@/types/pet\";\n> 6 | import { earGeometry, scarfGeometry, toyGeometry } from \"./geometry\";\n    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  7 | import { ActionClock, motionPose } from \"./motion\";\n  8 |\n  9 | export function MisoProceduralModel({ action, reducedMotion, pointer }: { action: PetAction...\n\nThe export earGeometry was not found in module [project]/src/components/pet/three/geometry.ts [app-client] (ecmascript).\nThe module has no exports at all.\nAll exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.\n\nImport trace:\n  Client Component Browser:\n    ./src/components/pet/three/MisoProceduralModel.tsx [Client Component Browser]\n    ./src/components/pet/three/PetScene3D.tsx [Client Component Browser]\n    ./src/components/pet/PetRenderer.tsx [Client Component Browser]\n    ./src/components/preview/MisoPreview.tsx [Client Component Browser]\n    ./src/components/preview/MisoPreview.tsx [Server Component]\n    ./src/app/preview/miso/page.tsx [Server Component]",
+    "timestamp": "2026-09-19T08:25:45.447Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "error",
+    "message": "./src/components/pet/three/MisoProceduralModel.tsx:6:1\nError: Export scarfGeometry doesn't exist in target module\n  4 | import { CatmullRomCurve3, Group, Mesh, MeshStandardMaterial, SphereGeometry, TubeGeometry,...\n  5 | import type { PetAction } from \"@/types/pet\";\n> 6 | import { earGeometry, scarfGeometry, toyGeometry } from \"./geometry\";\n    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  7 | import { ActionClock, motionPose } from \"./motion\";\n  8 |\n  9 | export function MisoProceduralModel({ action, reducedMotion, pointer }: { action: PetAction...\n\nThe export scarfGeometry was not found in module [project]/src/components/pet/three/geometry.ts [app-client] (ecmascript).\nThe module has no exports at all.\nAll exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.\n\nImport trace:\n  Client Component Browser:\n    ./src/components/pet/three/MisoProceduralModel.tsx [Client Component Browser]\n    ./src/components/pet/three/PetScene3D.tsx [Client Component Browser]\n    ./src/components/pet/PetRenderer.tsx [Client Component Browser]\n    ./src/components/preview/MisoPreview.tsx [Client Component Browser]\n    ./src/components/preview/MisoPreview.tsx [Server Component]\n    ./src/app/preview/miso/page.tsx [Server Component]",
+    "timestamp": "2026-09-19T08:25:45.447Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "error",
+    "message": "./src/components/pet/three/MisoProceduralModel.tsx:6:1\nError: Export toyGeometry doesn't exist in target module\n  4 | import { CatmullRomCurve3, Group, Mesh, MeshStandardMaterial, SphereGeometry, TubeGeometry,...\n  5 | import type { PetAction } from \"@/types/pet\";\n> 6 | import { earGeometry, scarfGeometry, toyGeometry } from \"./geometry\";\n    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  7 | import { ActionClock, motionPose } from \"./motion\";\n  8 |\n  9 | export function MisoProceduralModel({ action, reducedMotion, pointer }: { action: PetAction...\n\nThe export toyGeometry was not found in module [project]/src/components/pet/three/geometry.ts [app-client] (ecmascript).\nThe module has no exports at all.\nAll exports of the module are statically known (It doesn't have dynamic exports). So it's known statically that the requested export doesn't exist.\n\nImport trace:\n  Client Component Browser:\n    ./src/components/pet/three/MisoProceduralModel.tsx [Client Component Browser]\n    ./src/components/pet/three/PetScene3D.tsx [Client Component Browser]\n    ./src/components/pet/PetRenderer.tsx [Client Component Browser]\n    ./src/components/preview/MisoPreview.tsx [Client Component Browser]\n    ./src/components/preview/MisoPreview.tsx [Server Component]\n    ./src/app/preview/miso/page.tsx [Server Component]",
+    "timestamp": "2026-09-19T08:25:45.447Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T08:25:45.447Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T08:25:45.832Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T08:28:55.878Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T08:29:12.077Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T08:32:03.862Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "error",
+    "message": "%o\n\n%s Error: QA import failure\n    at push.FailedImport.ssr [as loader] (http://127.0.0.1:3000/_next/static/chunks/_0lbaxdq._.js:604:11)\n    at http://127.0.0.1:3000/_next/static/chunks/_0lbaxdq._.js:451:58\n    at lazyInitializer (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_1amofcm._.js:1457:28)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:14958:20)\n    at resolveLazy (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3671:20)\n    at beginWork (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6493:77)\n    at runWithFiberInDEV (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:761:74)\n    at performUnitOfWork (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9385:97)\n    at workLoopSync (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9279:40)\n    at renderRootSync (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9263:13)\n    at performWorkOnRoot (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:8891:186)\n    at performSyncWorkOnRoot (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10093:9)\n    at flushSyncWorkAcrossRoots_impl (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10009:316)\n    at flushSyncWork$1 (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9060:86)\n    at batchedUpdates$1 (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:2048:21)\n    at dispatchEventForPluginEventSystem (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10261:9)\n    at dispatchEvent (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:12858:37)\n    at dispatchDiscreteEvent (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:12840:64)\n    at to.selectOptions (<anonymous>:18:4749)\n    at <anonymous>:227:214\n    at <anonymous>:227:319\n    at <anonymous>:228:11\n    at <anonymous>:229:11 The above error occurred in the <Lazy> component. It was handled by the <SceneBoundary> error boundary.",
+    "timestamp": "2026-09-19T08:39:27.090Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T08:39:36.408Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "error",
+    "message": "Error: QA assets failure\n    at SceneContent (http://127.0.0.1:3000/_next/static/chunks/src_components_pet_three_060gzec._.js?id=%255Bproject%255D/src/components/pet/three/PetScene3D.tsx+%255Bapp-client%255D+(ecmascript):180:75)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:13238:32)\n    at It (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:9107:25)\n    at ks (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:10227:374)\n    at tt (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:10558:32)\n    at B (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:7924:70)\n    at Ph (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12450:50)\n    at wh (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12367:36)\n    at Ff (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12358:21)\n    at Lf (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12129:75)\n    at Tu (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:8321:129)\n    at MessagePort.performWorkUntilDeadline (http://127.0.0.1:3000/_next/static/chunks/node_modules_1spg6od._.js:333:64)",
+    "timestamp": "2026-09-19T08:39:36.408Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/src_components_pet_three_060gzec._.js?id=%255Bproject%255D/src/components/pet/three/PetScene3D.tsx+%255Bapp-client%255D+(ecmascript)"
+  },
+  {
+    "level": "error",
+    "message": "%o\n\n%s Error: QA assets failure\n    at SceneContent (http://127.0.0.1:3000/_next/static/chunks/src_components_pet_three_060gzec._.js?id=%255Bproject%255D/src/components/pet/three/PetScene3D.tsx+%255Bapp-client%255D+(ecmascript):180:75)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:13238:32)\n    at It (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:9107:25)\n    at ks (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:10227:374)\n    at tt (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:10558:32)\n    at B (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:7924:70)\n    at Ph (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12450:50)\n    at wh (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12367:36)\n    at Ff (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12358:21)\n    at Lf (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12129:75)\n    at Tu (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:8321:129)\n    at MessagePort.performWorkUntilDeadline (http://127.0.0.1:3000/_next/static/chunks/node_modules_1spg6od._.js:333:64) The above error occurred in the <CanvasImpl> component. It was handled by the <SceneBoundary> error boundary.",
+    "timestamp": "2026-09-19T08:39:36.408Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T08:39:51.052Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "error",
+    "message": "Error: QA renderer failure\n    at SceneContent (http://127.0.0.1:3000/_next/static/chunks/src_components_pet_three_060gzec._.js?id=%255Bproject%255D/src/components/pet/three/PetScene3D.tsx+%255Bapp-client%255D+(ecmascript):180:75)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:13238:32)\n    at It (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:9107:25)\n    at ks (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:10227:374)\n    at tt (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:10558:32)\n    at B (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:7924:70)\n    at Ph (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12450:50)\n    at wh (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12367:36)\n    at Ff (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12358:21)\n    at Lf (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12129:75)\n    at Tu (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:8321:129)\n    at MessagePort.performWorkUntilDeadline (http://127.0.0.1:3000/_next/static/chunks/node_modules_1spg6od._.js:333:64)",
+    "timestamp": "2026-09-19T08:39:51.052Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/src_components_pet_three_060gzec._.js?id=%255Bproject%255D/src/components/pet/three/PetScene3D.tsx+%255Bapp-client%255D+(ecmascript)"
+  },
+  {
+    "level": "error",
+    "message": "%o\n\n%s Error: QA renderer failure\n    at SceneContent (http://127.0.0.1:3000/_next/static/chunks/src_components_pet_three_060gzec._.js?id=%255Bproject%255D/src/components/pet/three/PetScene3D.tsx+%255Bapp-client%255D+(ecmascript):180:75)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:13238:32)\n    at It (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:9107:25)\n    at ks (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:10227:374)\n    at tt (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:10558:32)\n    at B (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:7924:70)\n    at Ph (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12450:50)\n    at wh (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12367:36)\n    at Ff (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12358:21)\n    at Lf (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12129:75)\n    at Tu (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:8321:129)\n    at MessagePort.performWorkUntilDeadline (http://127.0.0.1:3000/_next/static/chunks/node_modules_1spg6od._.js:333:64) The above error occurred in the <CanvasImpl> component. It was handled by the <SceneBoundary> error boundary.",
+    "timestamp": "2026-09-19T08:39:51.052Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T08:40:02.843Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLRenderer: WEBGL_lose_context extension not supported.",
+    "timestamp": "2026-09-19T08:40:11.360Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T08:40:24.079Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T08:41:47.305Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  }
+]
