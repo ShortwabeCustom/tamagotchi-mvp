@@ -8,7 +8,8 @@ export type ProductEvent =
   | "name_submitted"
   | "first_memory_created"
   | "return_visit"
-  | "memory_recalled";
+  | "memory_recalled"
+  | "memory_recall_failed";
 
 export function trackEvent(event: ProductEvent): void {
   if (process.env.NODE_ENV === "development") {

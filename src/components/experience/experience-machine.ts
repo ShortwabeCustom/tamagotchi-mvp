@@ -65,20 +65,52 @@ export function experienceReducer(
         ? {
             phase: "ASKING_NAME",
             dialogueStage: "greeting",
+            nameSubmission: "idle",
             petAction: petActionFor("ASKING_NAME"),
           }
         : state;
 
     case "ASKING_NAME":
       if (event.type === "NAME_REQUESTED") {
-        return { ...state, dialogueStage: "question", error: undefined };
+        return {
+          ...state,
+          dialogueStage: "question",
+          nameSubmission: "idle",
+          error: undefined,
+        };
       }
 
       if (event.type === "NAME_SUBMITTED") {
+        if (state.nameSubmission === "pending") return state;
+
+        return {
+          ...state,
+          dialogueStage: "question",
+          nameSubmission: "pending",
+          draftName: event.displayName,
+          error: undefined,
+          petAction: {
+            emotion: "thinking",
+            animation: "listening",
+            intensity: 0.4,
+          },
+        };
+      }
+
+      if (event.type === "NAME_PERSISTED" && state.nameSubmission === "pending") {
         return {
           phase: "REMEMBERING_NAME",
           displayName: event.displayName,
           petAction: petActionFor("REMEMBERING_NAME"),
+        };
+      }
+
+      if (event.type === "NAME_FAILED" && state.nameSubmission === "pending") {
+        return {
+          ...state,
+          nameSubmission: "error",
+          error: event.message,
+          petAction: petActionFor("ASKING_NAME"),
         };
       }
 
@@ -91,15 +123,6 @@ export function experienceReducer(
           displayName: state.displayName,
           returning: false,
           petAction: petActionFor("COMPANION"),
-        };
-      }
-
-      if (event.type === "NAME_FAILED") {
-        return {
-          phase: "ASKING_NAME",
-          dialogueStage: "question",
-          error: event.message,
-          petAction: petActionFor("ASKING_NAME"),
         };
       }
 

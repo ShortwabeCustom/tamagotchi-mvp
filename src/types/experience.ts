@@ -38,6 +38,8 @@ export interface PetAwakeningState extends BaseExperienceState {
 export interface AskingNameState extends BaseExperienceState {
   phase: "ASKING_NAME";
   dialogueStage: "greeting" | "question";
+  nameSubmission: "idle" | "pending" | "error";
+  draftName?: string;
   error?: string;
 }
 
@@ -70,6 +72,7 @@ export type ExperienceEvent =
   | { type: "PET_AWAKE" }
   | { type: "NAME_REQUESTED" }
   | { type: "NAME_SUBMITTED"; displayName: string }
+  | { type: "NAME_PERSISTED"; displayName: string }
   | { type: "NAME_REMEMBERED" }
   | { type: "NAME_FAILED"; message: string }
   | { type: "RETURNING_VISITOR"; displayName: string };

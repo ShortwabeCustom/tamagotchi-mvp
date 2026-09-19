@@ -1,29 +1,35 @@
 "use client";
 
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer, useRef, useState } from "react";
 import { Conversation } from "@/components/conversation/Conversation";
 import { Envelope } from "@/components/envelope/Envelope";
 import { Letter } from "@/components/letter/Letter";
 import { PetRenderer } from "@/components/pet/PetRenderer";
 import { usePrefersReducedMotion } from "@/hooks/use-prefers-reduced-motion";
 import { trackEvent } from "@/lib/analytics/track-event";
-import { rememberDisplayName } from "@/lib/profile/profile-client";
+import { RECOVERABLE_NAME_ERROR, rememberDisplayName } from "@/lib/profile/profile-client";
 import { createInitialExperienceState, experienceReducer } from "./experience-machine";
 import styles from "./Experience.module.css";
 
 interface ExperienceProps {
   initialDisplayName?: string;
+  initialMemoryStatus?: "resolved" | "unavailable";
 }
 
-export function Experience({ initialDisplayName }: ExperienceProps) {
+export function Experience({
+  initialDisplayName,
+  initialMemoryStatus = "resolved",
+}: ExperienceProps) {
   const [state, dispatch] = useReducer(experienceReducer, initialDisplayName, createInitialExperienceState);
   const [returningReady, setReturningReady] = useState(!initialDisplayName);
   const prefersReducedMotion = usePrefersReducedMotion();
+  const submissionInFlight = useRef(false);
 
   useEffect(() => {
     trackEvent(initialDisplayName ? "return_visit" : "experience_started");
     if (initialDisplayName) trackEvent("memory_recalled");
-  }, [initialDisplayName]);
+    if (initialMemoryStatus === "unavailable") trackEvent("memory_recall_failed");
+  }, [initialDisplayName, initialMemoryStatus]);
 
   useEffect(() => {
     const shortDelay = prefersReducedMotion ? 30 : 620;
@@ -57,19 +63,27 @@ export function Experience({ initialDisplayName }: ExperienceProps) {
   }, [initialDisplayName, prefersReducedMotion]);
 
   async function submitName(displayName: string) {
+    if (submissionInFlight.current) return;
+    submissionInFlight.current = true;
     dispatch({ type: "NAME_SUBMITTED", displayName });
     trackEvent("name_submitted");
 
     try {
       const response = await rememberDisplayName(displayName);
       if (response.firstMemoryCreated) trackEvent("first_memory_created");
+      dispatch({ type: "NAME_PERSISTED", displayName: response.displayName });
       await wait(prefersReducedMotion ? 30 : 1450);
       dispatch({ type: "NAME_REMEMBERED" });
     } catch (error) {
+      if (process.env.NODE_ENV === "development") {
+        console.error("Unable to persist display name", error);
+      }
       dispatch({
         type: "NAME_FAILED",
-        message: error instanceof Error ? error.message : "No pude guardar tu nombre. Inténtalo otra vez.",
+        message: RECOVERABLE_NAME_ERROR,
       });
+    } finally {
+      submissionInFlight.current = false;
     }
   }
 
