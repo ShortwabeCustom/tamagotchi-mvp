@@ -1,0 +1,602 @@
+[
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:24.992Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:25.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:26.995Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:27.992Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:28.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:29.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:30.994Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:31.989Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:32.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:33.992Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:34.993Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:35.992Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:36.510Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:36.522Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:36.588Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:36.985Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:37.992Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:38.988Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:39.989Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:40.988Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:41.991Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:42.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:43.991Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:44.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:45.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:46.989Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:47.109Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:47.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:48.989Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:49.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:50.989Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:51.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:52.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:53.989Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:54.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:55.989Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:56.988Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:57.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:58.989Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:59.189Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:35:59.989Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:00.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:01.991Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:02.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:03.989Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:04.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:05.989Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:06.989Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:07.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:08.989Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:09.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:10.989Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:11.989Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:12.989Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:13.989Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:14.989Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:15.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:16.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:17.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:18.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:19.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:20.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:21.990Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:22.989Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:23.989Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:24.989Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:25.988Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:26.989Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T07:36:28.157Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:28.173Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:39.371Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:39.387Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T07:36:59.392Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:36:59.392Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLRenderer: WEBGL_lose_context extension not supported.",
+    "timestamp": "2026-09-19T07:37:08.658Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "error",
+    "message": "%o\n\n%s Error: QA import failure\n    at push.FailedImport.ssr [as loader] (http://127.0.0.1:3000/_next/static/chunks/_1jky8wa._.js:602:11)\n    at http://127.0.0.1:3000/_next/static/chunks/_1jky8wa._.js:451:58\n    at lazyInitializer (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_1amofcm._.js:1457:28)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:14958:20)\n    at resolveLazy (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:3671:20)\n    at beginWork (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:6493:77)\n    at runWithFiberInDEV (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:761:74)\n    at performUnitOfWork (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9385:97)\n    at workLoopSync (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9279:40)\n    at renderRootSync (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9263:13)\n    at performWorkOnRoot (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:8891:186)\n    at performSyncWorkOnRoot (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10093:9)\n    at flushSyncWorkAcrossRoots_impl (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10009:316)\n    at flushSyncWork$1 (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:9060:86)\n    at batchedUpdates$1 (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:2048:21)\n    at dispatchEventForPluginEventSystem (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:10261:9)\n    at dispatchEvent (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:12858:37)\n    at dispatchDiscreteEvent (http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:12840:64)\n    at to.selectOptions (<anonymous>:18:4749)\n    at <anonymous>:227:214\n    at <anonymous>:227:319\n    at <anonymous>:228:11\n    at <anonymous>:229:11 The above error occurred in the <Lazy> component. It was handled by the <SceneBoundary> error boundary.",
+    "timestamp": "2026-09-19T07:37:15.995Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T07:37:16.111Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "error",
+    "message": "Error: QA assets failure\n    at SceneContent (http://127.0.0.1:3000/_next/static/chunks/src_components_pet_three_1hkq46t._.js:768:75)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:13238:32)\n    at It (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:9107:25)\n    at ks (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:10227:374)\n    at tt (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:10558:32)\n    at B (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:7924:70)\n    at Ph (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12450:50)\n    at wh (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12367:36)\n    at Ff (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12358:21)\n    at Lf (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12129:75)\n    at Tu (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:8321:129)\n    at MessagePort.performWorkUntilDeadline (http://127.0.0.1:3000/_next/static/chunks/node_modules_1spg6od._.js:333:64)",
+    "timestamp": "2026-09-19T07:37:16.111Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/src_components_pet_three_1hkq46t._.js"
+  },
+  {
+    "level": "error",
+    "message": "%o\n\n%s Error: QA assets failure\n    at SceneContent (http://127.0.0.1:3000/_next/static/chunks/src_components_pet_three_1hkq46t._.js:768:75)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:13238:32)\n    at It (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:9107:25)\n    at ks (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:10227:374)\n    at tt (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:10558:32)\n    at B (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:7924:70)\n    at Ph (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12450:50)\n    at wh (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12367:36)\n    at Ff (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12358:21)\n    at Lf (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12129:75)\n    at Tu (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:8321:129)\n    at MessagePort.performWorkUntilDeadline (http://127.0.0.1:3000/_next/static/chunks/node_modules_1spg6od._.js:333:64) The above error occurred in the <CanvasImpl> component. It was handled by the <SceneBoundary> error boundary.",
+    "timestamp": "2026-09-19T07:37:16.112Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T07:37:16.222Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "error",
+    "message": "Error: QA renderer failure\n    at SceneContent (http://127.0.0.1:3000/_next/static/chunks/src_components_pet_three_1hkq46t._.js:768:75)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:13238:32)\n    at It (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:9107:25)\n    at ks (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:10227:374)\n    at tt (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:10558:32)\n    at B (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:7924:70)\n    at Ph (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12450:50)\n    at wh (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12367:36)\n    at Ff (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12358:21)\n    at Lf (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12129:75)\n    at Tu (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:8321:129)\n    at MessagePort.performWorkUntilDeadline (http://127.0.0.1:3000/_next/static/chunks/node_modules_1spg6od._.js:333:64)",
+    "timestamp": "2026-09-19T07:37:16.222Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/src_components_pet_three_1hkq46t._.js"
+  },
+  {
+    "level": "error",
+    "message": "%o\n\n%s Error: QA renderer failure\n    at SceneContent (http://127.0.0.1:3000/_next/static/chunks/src_components_pet_three_1hkq46t._.js:768:75)\n    at Object.react_stack_bottom_frame (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:13238:32)\n    at It (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:9107:25)\n    at ks (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:10227:374)\n    at tt (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:10558:32)\n    at B (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:7924:70)\n    at Ph (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12450:50)\n    at wh (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12367:36)\n    at Ff (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12358:21)\n    at Lf (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:12129:75)\n    at Tu (http://127.0.0.1:3000/_next/static/chunks/node_modules_%40react-three_fiber_dist_0sjpx1_._.js:8321:129)\n    at MessagePort.performWorkUntilDeadline (http://127.0.0.1:3000/_next/static/chunks/node_modules_1spg6od._.js:333:64) The above error occurred in the <CanvasImpl> component. It was handled by the <SceneBoundary> error boundary.",
+    "timestamp": "2026-09-19T07:37:16.222Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_client_0_90u2t._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T07:37:27.902Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:37:27.905Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:37:38.837Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T07:37:47.233Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:37:47.233Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T07:38:30.019Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:38:30.040Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T07:38:55.164Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:38:55.164Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:39:02.374Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T07:39:19.192Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLShadowMap: PCFSoftShadowMap has been removed. Using PCFShadowMap instead.",
+    "timestamp": "2026-09-19T07:39:19.192Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T07:39:37.759Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T07:40:06.243Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T07:43:34.823Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T07:43:59.719Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.WebGLRenderer: WEBGL_lose_context extension not supported.",
+    "timestamp": "2026-09-19T07:44:00.226Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  },
+  {
+    "level": "warn",
+    "message": "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "timestamp": "2026-09-19T07:44:08.179Z",
+    "url": "http://127.0.0.1:3000/_next/static/chunks/node_modules_next_dist_1e8vcs8._.js"
+  }
+]

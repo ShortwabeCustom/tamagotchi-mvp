@@ -1,0 +1,55 @@
+[
+  {
+    "test": "2d selector preserves draft and removes canvas",
+    "pass": true,
+    "draft2d": "Bety local",
+    "canvas2d": 0
+  },
+  {
+    "test": "real WEBGL_lose_context falls back, retains draft, unmounts canvas",
+    "pass": true
+  },
+  {
+    "test": "import failure preserves draft and falls back",
+    "pass": true
+  },
+  {
+    "test": "assets failure preserves draft and falls back",
+    "pass": true
+  },
+  {
+    "test": "renderer failure preserves draft and falls back",
+    "pass": true
+  },
+  {
+    "test": "missing first frame falls back and retains draft",
+    "observedAfterMs": 19264,
+    "pass": true
+  },
+  {
+    "test": "FINAL reduced motion stays on first-frame state without ongoing rendering",
+    "pass": true,
+    "intervalMs": 18458,
+    "before": "24,889 triángulos · 34 draw calls (principal) · 37,969 / 48 con sombras · DPR 1 · 13 geometrías · 3 texturas · 1750 frames\nANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+    "after": "24,889 triángulos · 34 draw calls (principal) · 37,969 / 48 con sombras · DPR 1 · 13 geometrías · 3 texturas · 1750 frames\nANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
+  },
+  {
+    "test": "390x500 input and CTA fit at top without horizontal overflow",
+    "pass": true,
+    "viewport": [
+      390,
+      500
+    ],
+    "inputAndButtonBottom": 424.1953125
+  },
+  {
+    "test": "offscreen Canvas stops rendering",
+    "pass": true,
+    "before": "24,889 triángulos · 34 draw calls (principal) · 37,969 / 48 con sombras · DPR 1 · 13 geometrías · 3 texturas · 5891 frames\nANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)",
+    "after": "24,889 triángulos · 34 draw calls (principal) · 37,969 / 48 con sombras · DPR 1 · 13 geometrías · 3 texturas · 5891 frames\nANGLE (Apple, ANGLE Metal Renderer: Apple M4, Unspecified Version)"
+  },
+  {
+    "test": "desktop 1440x900, tablet 768x1024 and mobile 390x844 without horizontal overflow",
+    "pass": true
+  }
+]

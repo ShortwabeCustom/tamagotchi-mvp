@@ -1,0 +1,13 @@
+
+> bety@0.1.0 test
+> vitest run --exclude tests/integration/**
+
+
+ RUN  v5.0.1 /Users/alexisvaldez/Developer/bety-miso-3d
+
+
+ Test Files  6 passed (6)
+      Tests  24 passed (24)
+   Start at  01:44:35
+   Duration  123ms (transform 47%, tests 36%, import 15%, worker 2%)
+
