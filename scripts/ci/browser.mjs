@@ -19,7 +19,7 @@ export async function browserJourney(mode) {
     const call=(method,params)=>new Promise((resolve,reject)=>{const id=next++;pending.set(id,{resolve,reject});socket.send(JSON.stringify({id,method,params}));});
     const evaluate=async expression=>{const response=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(response.exceptionDetails)throw new Error('Browser evaluation failed');return response.result?.value;};
     const wait=async expression=>{for(let i=0;i<200;i++){if(await evaluate(expression))return;await new Promise(resolve=>setTimeout(resolve,200));}throw new Error('Browser state timeout: '+mode);};
-    const button=text=>`[...document.querySelectorAll('button')].find(e=>e.textContent.includes(${JSON.stringify(text)}))`;
+    const button=text=>`[...document.querySelectorAll('button')].find(e=>(e.getAttribute("aria-label") || e.textContent).includes(${JSON.stringify(text)}))`;
     await wait(`Boolean(${button('Abrir el sobre')})`);await evaluate(`${button('Abrir el sobre')}.click()`);
     await wait(`Boolean(${button('Abrir sorpresa')})`);await evaluate(`${button('Abrir sorpresa')}.click()`);
     await wait("Boolean(document.querySelector('input'))");

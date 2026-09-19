@@ -21,3 +21,7 @@ Acciones oficiales fijadas a commits completos, comprobados contra sus versiones
 ## Estado antes de la primera ejecución
 
 Lint, 10 pruebas locales PostgreSQL y 7 pruebas del verificador pasaron durante la adaptación. Los resultados Linux se obtendrán de la ejecución real; crear este workflow no equivale a PASS. Ante un bloqueo persistente se detendrá la ejecución, sin cambiar facturación, seguridad ni dependencias automáticamente. No hay release, tag, merge ni despliegue.
+
+## Primera ejecución: corrección del harness
+
+La ejecución 35454619092 construyó y verificó el candidato Linux. El segundo job pasó extracción y pruebas negativas, y las comprobaciones HTTP/SQL previas al navegador. El navegador falló al buscar «Abrir el sobre» en textContent: el componente existente proporciona ese nombre mediante aria-label. Se corrige únicamente el selector para respetar el nombre accesible y se realizará una segunda ejecución. El primer candidato no se declara validado.
