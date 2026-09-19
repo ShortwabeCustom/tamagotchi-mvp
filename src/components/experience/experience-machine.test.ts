@@ -16,6 +16,7 @@ describe("experienceReducer", () => {
       { type: "PET_AWAKE" },
       { type: "NAME_REQUESTED" },
       { type: "NAME_SUBMITTED", displayName: "Bety" },
+      { type: "NAME_PERSISTED", displayName: "Bety" },
       { type: "NAME_REMEMBERED" },
     ];
 
@@ -33,6 +34,7 @@ describe("experienceReducer", () => {
       "PET_AWAKENING",
       "ASKING_NAME",
       "ASKING_NAME",
+      "ASKING_NAME",
       "REMEMBERING_NAME",
       "COMPANION",
     ]);
@@ -48,11 +50,35 @@ describe("experienceReducer", () => {
     });
   });
 
-  it("returns to the name question after a persistence error", () => {
+  it("does not confirm the name before persistence succeeds", () => {
     let state: ExperienceState = {
-      phase: "REMEMBERING_NAME",
-      displayName: "Bety",
-      petAction: { emotion: "happy", animation: "smallBounce", intensity: 0.6 },
+      phase: "ASKING_NAME",
+      dialogueStage: "question",
+      nameSubmission: "idle",
+      petAction: { emotion: "curious", animation: "listening", intensity: 0.45 },
+    };
+
+    state = experienceReducer(state, { type: "NAME_SUBMITTED", displayName: "Bety" });
+
+    expect(state).toMatchObject({
+      phase: "ASKING_NAME",
+      nameSubmission: "pending",
+      draftName: "Bety",
+      petAction: { emotion: "thinking" },
+    });
+
+    state = experienceReducer(state, { type: "NAME_REMEMBERED" });
+
+    expect(state.phase).toBe("ASKING_NAME");
+  });
+
+  it("returns to a recoverable question without losing the draft", () => {
+    let state: ExperienceState = {
+      phase: "ASKING_NAME",
+      dialogueStage: "question",
+      nameSubmission: "pending",
+      draftName: "Bety",
+      petAction: { emotion: "thinking", animation: "listening", intensity: 0.4 },
     };
 
     state = experienceReducer(state, { type: "NAME_FAILED", message: "Inténtalo otra vez." });
@@ -60,7 +86,43 @@ describe("experienceReducer", () => {
     expect(state).toMatchObject({
       phase: "ASKING_NAME",
       dialogueStage: "question",
+      nameSubmission: "error",
+      draftName: "Bety",
       error: "Inténtalo otra vez.",
     });
+  });
+
+  it("can retry successfully after a recoverable error", () => {
+    let state: ExperienceState = {
+      phase: "ASKING_NAME",
+      dialogueStage: "question",
+      nameSubmission: "error",
+      draftName: "Bety",
+      error: "Inténtalo otra vez.",
+      petAction: { emotion: "curious", animation: "listening", intensity: 0.45 },
+    };
+
+    state = experienceReducer(state, { type: "NAME_SUBMITTED", displayName: "Bety" });
+    state = experienceReducer(state, { type: "NAME_PERSISTED", displayName: "Bety" });
+
+    expect(state).toMatchObject({
+      phase: "REMEMBERING_NAME",
+      displayName: "Bety",
+      petAction: { emotion: "happy", animation: "smallBounce" },
+    });
+  });
+
+  it("ignores repeated submits while persistence is pending", () => {
+    const pending: ExperienceState = {
+      phase: "ASKING_NAME",
+      dialogueStage: "question",
+      nameSubmission: "pending",
+      draftName: "Bety",
+      petAction: { emotion: "thinking", animation: "listening", intensity: 0.4 },
+    };
+
+    expect(
+      experienceReducer(pending, { type: "NAME_SUBMITTED", displayName: "Otra" }),
+    ).toBe(pending);
   });
 });
