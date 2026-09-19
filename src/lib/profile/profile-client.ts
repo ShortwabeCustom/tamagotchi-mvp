@@ -23,22 +23,22 @@ export async function rememberDisplayName(
   });
 
   try {
-    const response = await Promise.race([
-      fetch("/api/profile/name", {
+    const request = async () => {
+      const response = await fetch("/api/profile/name", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({ displayName }),
         signal: controller.signal,
-      }),
-      timeout,
-    ]);
+      });
+      if (!response.ok) {
+        const body = (await response.json().catch(() => null)) as ApiErrorResponse | null;
+        throw new Error(body?.error ?? "name persistence request failed");
+      }
+      return (await response.json()) as ProfileResponse;
+    };
+    // The eight-second deadline includes reading the response body, not just headers.
+    return await Promise.race([request(), timeout]);
 
-    if (!response.ok) {
-      const body = (await response.json().catch(() => null)) as ApiErrorResponse | null;
-      throw new Error(body?.error ?? "name persistence request failed");
-    }
-
-    return (await response.json()) as ProfileResponse;
   } catch (error) {
     throw new Error(RECOVERABLE_NAME_ERROR, { cause: error });
   } finally {

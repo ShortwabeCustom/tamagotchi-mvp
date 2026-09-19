@@ -5,7 +5,6 @@
   place-items: center;
   align-content: center;
   gap: clamp(1.4rem, 3vh, 2.3rem);
-  overflow: hidden;
   padding: max(1.4rem, env(safe-area-inset-top)) 1rem max(1.4rem, env(safe-area-inset-bottom));
   isolation: isolate;
 }
@@ -59,7 +58,7 @@
 
 @media (max-width: 42rem) {
   .companionStage {
-    align-content: start center;
+    align-content: start;
     gap: 1rem;
     overflow-y: auto;
     padding-top: max(1.5rem, env(safe-area-inset-top));
@@ -98,4 +97,18 @@
 @media (prefers-reduced-motion: reduce) {
   .glow,
   .petFrame { animation-duration: 1ms; }
+}
+
+/* Same reserved box for 3D and its 2D fallback; HTML conversation remains outside. */
+.sceneFrame { width: min(100%, 48rem); height: clamp(20rem, 48svh, 30rem); min-height: 0; place-items: center; }
+@media (max-width: 42rem) {
+  .sceneFrame { height: min(46svh, 25rem); min-height: 0; }
+}
+@media (max-width: 42rem) and (max-height: 38rem) {
+  .sceneFrame, .companionStage:has(input:focus) .sceneFrame { height: 11rem; min-height: 0; }
+  .companionStage:has(input:focus) .sceneFrame > * { scale: 1; }
+}
+.sceneFrame > [role="img"] { width: min(40vw, 16rem); }
+@media (max-width: 42rem) and (max-height: 38rem) {
+  .sceneFrame > [role="img"] { width: 7.5rem; }
 }

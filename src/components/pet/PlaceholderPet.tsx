@@ -7,10 +7,12 @@ import styles from "./PlaceholderPet.module.css";
 
 interface PlaceholderPetProps {
   action: PetAction;
+  holdAwakening?: boolean;
+  onActionComplete?: () => void;
   reducedMotion?: boolean;
 }
 
-export function PlaceholderPet({ action, reducedMotion = false }: PlaceholderPetProps) {
+export function PlaceholderPet({ action, reducedMotion = false, holdAwakening = false, onActionComplete }: PlaceholderPetProps) {
   const [isBlinking, setIsBlinking] = useState(false);
   const systemReducedMotion = usePrefersReducedMotion();
   const prefersReducedMotion = reducedMotion || systemReducedMotion;
@@ -43,6 +45,7 @@ export function PlaceholderPet({ action, reducedMotion = false }: PlaceholderPet
 
   const className = [
     styles.pet,
+    holdAwakening ? styles.sleeping : "",
     prefersReducedMotion ? styles.reducedMotion : "",
     styles[action.animation],
     styles[action.emotion],
@@ -52,6 +55,7 @@ export function PlaceholderPet({ action, reducedMotion = false }: PlaceholderPet
   return (
     <div
       className={className}
+      onAnimationEnd={event => { if (!holdAwakening && action.animation === "awakening" && event.animationName.includes("eyes-awaken")) onActionComplete?.(); }}
       style={{ "--pet-intensity": action.intensity } as React.CSSProperties}
       role="img"
       aria-label={`Miso está ${emotionLabel(action.emotion)}`}

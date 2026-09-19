@@ -8,6 +8,8 @@ export interface SceneMetrics {
 }
 export interface SceneProps {
   action: PetAction;
+  holdAwakening?: boolean;
+  onActionComplete?: () => void;
   reducedMotion: boolean;
   view?: ViewAngle;
   presentation?: "artistic" | "baseline";

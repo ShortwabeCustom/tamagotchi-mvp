@@ -21,7 +21,7 @@ const PET_ACTIONS: Record<ExperiencePhase, PetAction> = {
     animation: "smallBounce",
     intensity: 0.6,
   },
-  COMPANION: { emotion: "happy", animation: "idle", intensity: 0.3 },
+  COMPANION: { emotion: "neutral", animation: "idle", intensity: 0.3 },
 };
 
 export function petActionFor(phase: ExperiencePhase): PetAction {

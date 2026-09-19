@@ -33,22 +33,27 @@ function createResources() {
     highlight: new MeshStandardMaterial({ color: "#fff4df", roughness: 0.1, emissive: "#fff4df", emissiveIntensity: 0.2 }),
   };
 }
-export function MisoProceduralModel({ action, reducedMotion, pointer }: { action: PetAction; reducedMotion: boolean; pointer: React.RefObject<{ x: number; y: number }> }) {
+export function MisoProceduralModel({ action, reducedMotion, pointer, holdAwakening = false, onActionComplete }: { holdAwakening?: boolean; onActionComplete?: () => void; action: PetAction; reducedMotion: boolean; pointer: React.RefObject<{ x: number; y: number }> }) {
   const root = useRef<Group>(null), head = useRef<Group>(null), body = useRef<Group>(null), tail = useRef<Group>(null), scarf = useRef<Group>(null);
   const eyeVolumes = useRef<Group>(null);
   const pupils = useRef<Group>(null), lids = useRef<Group>(null), smiles = useRef<Group>(null);
   const clock = useRef(new ActionClock());
+  const completed = useRef(-1);
   const animation = useRef({ time: 0, blinkAt: 3.2, blinkAge: 1 });
   const r = useMemo(() => createResources(), []);
   useEffect(() => () => disposeResources(r), [r]);
   useFrame((_, delta) => {
     const state = animation.current;
     state.time += Math.min(delta, 0.05);
-    const age = clock.current.step(action, delta);
+    const age = holdAwakening ? 0 : clock.current.step(action, delta);
+    if (!holdAwakening && action.animation === "awakening" && (reducedMotion || age >= 1.4) && completed.current !== clock.current.starts) {
+      completed.current = clock.current.starts;
+      queueMicrotask(() => onActionComplete?.());
+    }
     const pose = motionPose(action, age, state.time, reducedMotion);
     if (state.time > state.blinkAt) { state.blinkAge = 0; state.blinkAt = state.time + 2.8 + Math.random() * 4; }
     state.blinkAge += Math.min(delta, 0.05);
-    const expression = eyeExpression(action, age, state.blinkAge, reducedMotion);
+    const expression = holdAwakening ? { closure: 1, smile: false } : eyeExpression(action, age, state.blinkAge, reducedMotion);
     if (root.current) root.current.position.y = pose.lift;
     if (body.current) body.current.scale.y = pose.breath;
     if (head.current) {

@@ -363,3 +363,6 @@
 }
 
 .reducedMotion, .reducedMotion * { animation: none !important; transition: none !important; }
+
+.sleeping, .sleeping * { animation: none !important; }
+.sleeping .eye { transform: scaleY(0.06); }

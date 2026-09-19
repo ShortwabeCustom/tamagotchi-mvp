@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useReducer, useRef, useState } from "react";
+import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 import { Conversation } from "@/components/conversation/Conversation";
 import { Envelope } from "@/components/envelope/Envelope";
 import { Letter } from "@/components/letter/Letter";
@@ -12,17 +12,45 @@ import { createInitialExperienceState, experienceReducer } from "./experience-ma
 import styles from "./Experience.module.css";
 
 interface ExperienceProps {
+  testScenario?: string;
+  rendererMode?: "2d" | "3d";
+  rendererTimeoutMs?: number;
   initialDisplayName?: string;
   initialMemoryStatus?: "resolved" | "unavailable";
 }
 
 export function Experience({
+  testScenario,
+  rendererMode = "2d",
+  rendererTimeoutMs = 6000,
   initialDisplayName,
   initialMemoryStatus = "resolved",
 }: ExperienceProps) {
   const [state, dispatch] = useReducer(experienceReducer, initialDisplayName, createInitialExperienceState);
-  const [returningReady, setReturningReady] = useState(!initialDisplayName);
-  const prefersReducedMotion = usePrefersReducedMotion();
+  const [rendererReady, setRendererReady] = useState(false);
+  const [rendererFallback, setRendererFallback] = useState(false);
+  const [revealFinished, setRevealFinished] = useState(false);
+  const mounted = useRef(false);
+  const confirmationTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined);
+  const onRendererReady = useCallback((mode: "2d" | "3d") => {
+    if (mode === "2d" && rendererMode === "3d") setRendererFallback(true);
+    setRendererReady(true);
+  }, [rendererMode]);
+  const onAwake = useCallback(() => dispatch({ type: "PET_AWAKE" }), []);
+  useEffect(() => {
+    mounted.current = true;
+    return () => { mounted.current = false; clearTimeout(confirmationTimer.current); };
+  }, []);
+  const systemReducedMotion = usePrefersReducedMotion();
+  // Development-only fault injection for acceptance tests on the real route.
+  const scenario = process.env.NODE_ENV === "development" ? testScenario : undefined;
+  const prefersReducedMotion = systemReducedMotion || scenario === "reduced-motion";
+  const [contextFailed, setContextFailed] = useState(false);
+  useEffect(() => {
+    if (scenario !== "context" || state.phase !== "ASKING_NAME") return;
+    const timer = setTimeout(() => setContextFailed(true), 12000);
+    return () => clearTimeout(timer);
+  }, [scenario, state.phase]);
   const submissionInFlight = useRef(false);
 
   useEffect(() => {
@@ -37,10 +65,12 @@ export function Experience({
     const dialogueDelay = prefersReducedMotion ? 60 : 1550;
     let timer: ReturnType<typeof setTimeout> | undefined;
 
-    if (state.phase === "REVEAL") {
+    if (state.phase === "OPENING") {
+      // transitionend is preferred; this also covers reduced motion or a missing event.
+      timer = setTimeout(() => dispatch({ type: "ENVELOPE_OPENED" }), prefersReducedMotion ? 30 : 1200);
+    } else if (state.phase === "REVEAL") {
       timer = setTimeout(() => {
-        trackEvent("pet_revealed");
-        dispatch({ type: "PET_VISIBLE" });
+        setRevealFinished(true);
       }, shortDelay);
     } else if (state.phase === "PET_AWAKENING") {
       timer = setTimeout(() => dispatch({ type: "PET_AWAKE" }), wakeDelay);
@@ -57,10 +87,10 @@ export function Experience({
   }, [prefersReducedMotion, state]);
 
   useEffect(() => {
-    if (!initialDisplayName) return;
-    const timer = setTimeout(() => setReturningReady(true), prefersReducedMotion ? 60 : 2200);
-    return () => clearTimeout(timer);
-  }, [initialDisplayName, prefersReducedMotion]);
+    if (state.phase !== "REVEAL" || !rendererReady || !revealFinished) return;
+    trackEvent("pet_revealed");
+    dispatch({ type: "PET_VISIBLE" });
+  }, [state.phase, rendererReady, revealFinished]);
 
   async function submitName(displayName: string) {
     if (submissionInFlight.current) return;
@@ -70,11 +100,14 @@ export function Experience({
 
     try {
       const response = await rememberDisplayName(displayName);
+      if (!mounted.current) return;
       if (response.firstMemoryCreated) trackEvent("first_memory_created");
       dispatch({ type: "NAME_PERSISTED", displayName: response.displayName });
-      await wait(prefersReducedMotion ? 30 : 1450);
-      dispatch({ type: "NAME_REMEMBERED" });
+      confirmationTimer.current = setTimeout(() => {
+        if (mounted.current) dispatch({ type: "NAME_REMEMBERED" });
+      }, prefersReducedMotion ? 30 : 1450);
     } catch (error) {
+      if (!mounted.current) return;
       if (process.env.NODE_ENV === "development") {
         console.error("Unable to persist display name", error);
       }
@@ -86,6 +119,10 @@ export function Experience({
       submissionInFlight.current = false;
     }
   }
+
+  if (initialMemoryStatus === "unavailable") return <main className={styles.companionStage}>
+    <section role="status"><p>No pude recuperar tu recuerdo ahora.</p><button onClick={() => window.location.reload()}>Volver a intentar</button></section>
+  </main>;
 
   if (state.phase === "SEALED" || state.phase === "OPENING") {
     return (
@@ -119,21 +156,25 @@ export function Experience({
 
   return (
     <main
+      data-phase={state.phase}
+      data-renderer={rendererFallback ? "2d" : rendererMode}
       className={`${styles.companionStage} ${state.phase === "REVEAL" ? styles.revealing : ""}`}
     >
-      <div className={styles.glow} aria-hidden="true" />
-      <div className={styles.petFrame}>
-        <PetRenderer action={state.petAction} />
+      {rendererMode === "2d" && <div className={styles.glow} aria-hidden="true" />}
+      <div className={`${styles.petFrame} ${rendererMode === "3d" ? styles.sceneFrame : ""}`} onAnimationEnd={event => {
+        if (event.target === event.currentTarget && state.phase === "REVEAL") setRevealFinished(true);
+      }}>
+        <PetRenderer action={state.petAction} mode={rendererFallback ? "2d" : rendererMode}
+          reducedMotion={prefersReducedMotion}
+          failure={contextFailed ? "context" : scenario === "timeout" ? "timeout" : scenario === "import" ? "import" : "none"}
+          loadTimeoutMs={rendererTimeoutMs} onReady={onRendererReady}
+          holdAwakening={state.phase === "REVEAL"} onActionComplete={onAwake} />
       </div>
       {showConversation ? (
-        <Conversation state={state} returningReady={returningReady} onSubmitName={submitName} />
+        <Conversation state={state} returningReady={true} onSubmitName={submitName} />
       ) : (
         <span className={styles.srOnly} aria-live="polite">Miso está despertando.</span>
       )}
     </main>
   );
-}
-
-function wait(milliseconds: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, milliseconds));
 }
