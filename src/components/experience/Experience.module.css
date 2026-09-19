@@ -1,0 +1,9 @@
+.revealPlaceholder {
+  display: grid;
+  min-height: 100svh;
+  place-items: center;
+  color: var(--muted);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.2rem;
+  font-style: italic;
+}
